@@ -5,29 +5,123 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="color-scheme" content="light dark">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap">
+	<link rel="stylesheet" href="colors.css">
 	<title>NexSpring Software</title>
 	<style>
-		:root {
-			--pico-font-family: 'Times New Roman', Times, serif;
+		@layer decoration {
+			body {
+				background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+				background-size: 3rem 3rem;
+			}
+
+			body > div {
+				border-style: solid;
+				border-width: 1px;
+				border-color: var(--grid-line);
+			}
+		}
+
+		@layer layout {
+			body {
+				margin: 0;
+			}
+
+			body header, body main, body footer {
+				max-width: 70rem;
+				margin: 0 auto;
+				padding: 1rem 0;
+			}
+
+			body > div {
+				background-color: var(--bg-color);
+			}
+
+			body header {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+
+		@layer component {
+			.title {
+				font-weight: bolder;
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+
+				&::before {
+					content: "";
+					background-color: var(--accent);
+					width: 0.5rem;
+					height: 0.5rem;
+
+				}
+			}
+
+			.boxed {
+				width: fit-content;
+				height: fit-content;
+				margin: auto;
+				padding: 1rem;
+				border-style: solid;
+				border-width: 1px;
+				border-color: var(--grid-line);
+				background-color: var(--bg-color);
+			}
+
+			.muted {
+				color: var(--fg-muted);
+			}
 		}
 
 		body {
-			text-align: center;
+			font-family: 'JetBrains Mono', monospace;
+			background-color: var(--bg-color);
+			color: var(--color);
 		}
+
+		header {
+			background-color: var(--bg-color);
+		}
+
+		footer {
+			height: 2rem;
+			background-color: var(--bg-color);
+			border-style: solid;
+			border-width: 1px;
+			border-color: var(--grid-line);
+			padding: 0.5rem;
+		}
+
+		button {
+			background-color: var(--bg-color);
+			color: var(--fg-muted);
+			border-style: solid;
+			border-width: 1pt;
+			border-color: var(--fg-muted);
+			padding: 0.5rem;
+			text-transform: uppercase;
+			font-weight: bolder;
+		}
+
 	</style>
 </head>
 
 <body>
+	<div>
+		<header>
+			<span class="title">NexSpring Software</span>
+			<form action="mailto:contact@nexspring.ca"><button>Inquire</button></form>
+		</header>
+	</div>
 	<main>
-		<hgroup>
-			<h1>NexSpring Software</h1>
-			<p class="tagline">Coming soon.</p>
-		</hgroup>
+		<div class="boxed">Coming soon.</div>
 	</main>
 	<footer>
-		<hr>
-		<small>Copyright &copy; 2025 NexSpring Software Inc.</small>
+		<small class="muted">Copyright &copy; 2025 NexSpring Software Inc.</small>
 	</footer>
 </body>
 
