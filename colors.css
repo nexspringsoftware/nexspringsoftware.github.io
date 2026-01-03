@@ -23,8 +23,8 @@
 
 	@media only screen and (prefers-color-scheme: dark) {
 		:root {
-			--bg-color: hsl(220 20% 8%);
-			--colo: hsl(0 0% 95%);
+			--bg-color: hsl(220 40% 20%);
+			--color: hsl(0 0% 95%);
 
 			--primary: hsl(0 0% 95%);
 			--fg-primary: hsl(220 20% 8%);
@@ -35,13 +35,13 @@
 			--muted: hsl(220 15% 18%);
 			--fg-muted: hsl(220 10% 60%);
 
-			--accent: hsl(215 90% 55%);
+			--accent: hsl(215 90% 50%);
 			--fg-accent: hsl(0 0% 100%);
 
 			--destructive: hsl(0 62% 30%);
 			--fg-destructive: hsl(0 75% 50%);
 
-			--grid-line: hsl(220 15% 15%);
+			--grid-line: hsl(220 40% 30%);
 		}
 	}
 }

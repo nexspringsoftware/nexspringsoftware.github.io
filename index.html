@@ -50,6 +50,7 @@
 					height: 2rem;
 					display: flex;
 					justify-content: space-between;
+					align-items: center;
 					padding: 1rem;
 				}
 
@@ -57,27 +58,14 @@
 					flex: 1 1 auto;
 
 					.container {
-						padding: 1rem;
+						min-height: 24rem;
+						padding: 0 1rem;
 					}
 				}
 			}
 		}
 
 		@layer component {
-			.title {
-				font-weight: bolder;
-				display: inline-flex;
-				align-items: center;
-				gap: 0.5rem;
-
-				&::before {
-					content: "";
-					background-color: var(--accent);
-					width: 0.5rem;
-					height: 0.5rem;
-				}
-			}
-
 			.copy {
 				font-size: smaller;
 				color: var(--fg-muted);
@@ -90,8 +78,22 @@
 			color: var(--color);
 		}
 
-		a.title {
+		h1 {
 			font-size: larger;
+			font-weight: bolder;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+
+			&::before {
+				content: "";
+				background-color: var(--accent);
+				width: 0.5rem;
+				height: 0.5rem;
+			}
+		}
+
+		a:has(h1) {
 			color: var(--fg-color);
 			text-decoration: none;
 		}
@@ -111,13 +113,15 @@
 <body>
 	<header>
 		<div class="container">
-			<a class="title" href="/">NexSpring Software</a>
+			<a href="/">
+				<h1>NexSpring Software</h1>
+			</a>
 			<form action="mailto:contact@nexspring.ca"><button>Inquire</button></form>
 		</div>
 	</header>
 	<main>
 		<div class="container">
-			Coming soon.
+			<p>Coming soon.</p>
 		</div>
 	</main>
 	<footer>
