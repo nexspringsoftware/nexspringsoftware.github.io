@@ -35,9 +35,14 @@
 				min-height: 100vh;
 				gap: 1rem;
 
+				header {
+					position: fixed;
+					width: 100vw;
+				}
+
 				header .container {
 					align-self: stretch;
-					height: fit-content;
+					height: 3rem;
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
@@ -49,6 +54,10 @@
 					margin-right: auto;
 					padding-left: 1rem;
 					padding-right: 1rem;
+				}
+
+				.header-offset {
+					margin-top: 3rem;
 				}
 
 				main {
@@ -193,7 +202,7 @@
 			<a href="mailto:contact@nexspring.ca"><button>Inquire</button></a>
 		</div>
 	</header>
-	<main class="container">
+	<main class="container header-offset">
 		<section>
 			<h2 class="hero"><span class="highlighted">The bridge between state-of-the-art research to entreprise.</span></h2>
 			<p>
