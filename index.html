@@ -17,26 +17,16 @@
 				background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
 				background-size: 3rem 3rem;
 
-				>header,
-				>main .container,
-				>footer {
+				.box {
 					background-color: var(--bg-color);
 					border-style: solid;
 					border-width: 1px;
 					border-color: var(--grid-line);
 				}
 			}
-
-
 		}
 
 		@layer layout {
-			.container {
-				max-width: 72rem;
-				margin-left: auto;
-				margin-right: auto;
-			}
-
 			body {
 				width: 100%;
 				margin: 0;
@@ -45,23 +35,33 @@
 				min-height: 100vh;
 				gap: 1rem;
 
-				>header .container {
-					max-width: 74rem;
-					height: 2rem;
+				header .container {
+					align-self: stretch;
+					height: fit-content;
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
-					padding: 1rem;
 				}
 
-				>main {
+				.container {
+					max-width: 60rem;
+					margin-left: auto;
+					margin-right: auto;
+					padding-left: 1rem;
+					padding-right: 1rem;
+				}
+
+				main {
 					flex: 1 1 auto;
-
-					.container {
-						min-height: 24rem;
-						padding: 0 1rem;
-					}
+					display: flex;
+					flex-direction: column;
+					gap: 3rem;
 				}
+			}
+
+			.box>* {
+				margin-left: 1rem;
+				margin-right: 1rem;
 			}
 		}
 
@@ -107,26 +107,152 @@
 			font-weight: bolder;
 			cursor: pointer;
 		}
+
+
+		@layer typography {
+			.hero {
+				font-size: 32pt;
+				text-transform: capitalize;
+			}
+
+			span.highlighted {
+				background-color: var(--bg-color);
+			}
+		}
+
+		.stats {}
+
+		.cards {
+			margin: 0;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+
+			counter-reset: card;
+
+			section {
+				.card-header {
+					&::before {
+						counter-increment: card;
+						content: counter(card);
+						color: var(--accent);
+					}
+
+					display: flex;
+					justify-content: space-between;
+				}
+
+				border-color: var(--grid-line);
+				padding: 0.5rem 1rem;
+			}
+		}
+
+		i.corner {
+			width: .5rem;
+			height: .5rem;
+			border-top: solid;
+			border-right: solid;
+			border-width: 2px;
+			border-color: var(--color);
+		}
+
+		#contact {
+			text-decoration: underline;
+			cursor: pointer;
+		}
+
+		#copied {
+			position: fixed;
+			width: 100%;
+			opacity: 0;
+			bottom: 0rem;
+			transition: visibility 0.2s, opacity 0.2s ease, bottom 0.2s ease;
+
+			&.visible {
+				opacity: 1;
+				bottom: 1rem;
+			}
+
+			div {
+				width: fit-content;
+				padding: .5rem;
+				border-radius: 5px;
+				background-color: var(--primary);
+				color: var(--fg-primary);
+				margin: 0 auto;
+			}
+		}
 	</style>
 </head>
 
 <body>
-	<header>
-		<div class="container">
+	<header class="box">
+		<div class="topbar container">
 			<a href="/">
 				<h1>NexSpring Software</h1>
 			</a>
 			<a href="mailto:contact@nexspring.ca"><button>Inquire</button></a>
 		</div>
 	</header>
-	<main>
-		<div class="container">
-			<p>Coming soon.</p>
-		</div>
+	<main class="container">
+		<section>
+			<h2 class="hero"><span class="highlighted">The bridge between state-of-the-art research to entreprise.</span></h2>
+			<p>
+				<span class="highlighted">
+					We deliver tangible software innovation and excellence through our global network of
+					academic and engineering
+					partners. 1000s of publications, integrated in your system.
+				</span>
+			</p>
+		</section>
+		<hr>
+		<section class="box">
+			<h2>Areas of Expertise</h2>
+			<div class="cards">
+				<section>
+					<div class="card-header"><i class="corner"></i></div>
+					<h3>AI for SE and SE for AI</h3>
+					<p>Principled and reliable AI systems engineering and AI enhanced software engineering.</p>
+				</section>
+				<section>
+					<div class="card-header"><i class="corner"></i></div>
+					<h3>Performance Engineering</h3>
+					<p>Proactive throughput, scale and resource optimization.</p>
+				</section>
+				<section>
+					<div class="card-header"><i class="corner"></i></div>
+					<h3>Reliability Engineering</h3>
+					<p>Delivery of reliable, fault-tolerant and available software under real-world stress.</p>
+				</section>
+				<section>
+					<div class="card-header"><i class="corner"></i></div>
+					<h3>DevOps</h3>
+					<p>Efficient automated software development, testing, delivery and monitoring.</p>
+				</section>
+			</div>
+		</section>
+
+		<section>
+			<h2>Contact</h2>
+			<p>Challenge us at <span id="contact" onclick="copy(this.innerText);">contact@nexspring.ca</span>, we're up for
+				it.</p>
+		</section>
 	</main>
-	<footer>
+	<footer class="box">
 		<span class="copy">Copyright &copy; 2025 NexSpring Software Inc.</span>
 	</footer>
+	<div id="copied">
+		<div>Copied!</div>
+	</div>
+	<script>
+		const copied_popup = document.getElementById("copied");
+		async function copy(text) {
+			await navigator.clipboard.writeText(text);
+			copied_popup.classList.add("visible");
+			setTimeout(() => {
+				copied_popup.classList.remove("visible");
+			}, 3000);
+		}
+	</script>
 </body>
 
 </html>
