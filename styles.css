@@ -1,0 +1,364 @@
+@layer decoration {
+    body {
+        background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+        background-size: 3rem 3rem;
+
+        .box {
+            background-color: var(--bg-color);
+            border-style: solid;
+            border-width: 1px;
+            border-color: var(--grid-line);
+        }
+    }
+}
+
+@layer layout {
+    body {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        gap: 1rem;
+
+        header {
+            position: fixed;
+            width: 100vw;
+            z-index: 100;
+        }
+
+        header .container {
+            align-self: stretch;
+            height: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 60rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .header-offset {
+            margin-top: 3rem;
+        }
+
+        main {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+    }
+
+    .box>* {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@layer component {
+    .copy {
+        font-size: smaller;
+        color: var(--fg-muted);
+    }
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--bg-color);
+    color: var(--color);
+}
+
+h1 {
+    font-size: larger;
+    font-weight: bolder;
+    display: inline-flex;
+    align-items: center;
+    color: var(--color);
+    text-decoration: none;
+    gap: 0.5rem;
+}
+
+h1::before {
+    content: "";
+    background-color: var(--accent);
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+button {
+    background-color: var(--bg-color);
+    border-style: solid;
+    border-width: 1pt;
+    border-color: var(--color);
+    color: var(--color);
+    padding: 0.5rem;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+nav a.tab {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.5rem 1rem;
+    text-transform: none;
+    font-weight: normal;
+    color: var(--fg-muted);
+    transition: color 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+nav a.tab:hover {
+    color: var(--color);
+}
+
+nav a.tab.active {
+    color: var(--color);
+    border-bottom-color: var(--accent);
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 768px) {
+    header .container {
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 3rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    nav a.tab {
+        font-size: 0.875rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    .header-offset {
+        margin-top: 5rem;
+    }
+}
+
+@layer typography {
+    .hero {
+        font-size: 32pt;
+        text-transform: capitalize;
+    }
+
+    span.highlighted {
+        background-color: var(--bg-color);
+    }
+}
+
+.cards {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+    counter-reset: card;
+}
+
+.cards section {
+    border-color: var(--grid-line);
+    padding: 0.5rem 1rem;
+}
+
+.cards section .card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards section .card-header::before {
+    counter-increment: card;
+    content: counter(card);
+    color: var(--accent);
+}
+
+i.corner {
+    width: .5rem;
+    height: .5rem;
+    border-top: solid;
+    border-right: solid;
+    border-width: 2px;
+    border-color: var(--color);
+}
+
+#contact-email {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#copied {
+    position: fixed;
+    width: 100%;
+    opacity: 0;
+    bottom: 0rem;
+    transition: visibility 0.2s, opacity 0.2s ease, bottom 0.2s ease;
+}
+
+#copied.visible {
+    opacity: 1;
+    bottom: 1rem;
+}
+
+#copied div {
+    width: fit-content;
+    padding: .5rem;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--fg-primary);
+    margin: 0 auto;
+}
+
+/* Team Grid Layout */
+section.box {
+    max-width: none;
+    margin-left: calc(50% - 37.5rem);
+    margin-right: calc(50% - 37.5rem);
+    width: 75rem;
+}
+
+section.box .team-grid-container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media only screen and (max-width: 75rem) {
+    section.box {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        width: calc(100% - 2rem);
+    }
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--grid-line);
+    padding: 2rem;
+    background-color: var(--bg-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 0;
+}
+
+.team-member:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+.team-member-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    background-color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--muted) 0%, var(--secondary) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fg-muted);
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.photo-placeholder::before {
+    content: "Photo";
+    opacity: 0.5;
+}
+
+.team-member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.team-member-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: bolder;
+    color: var(--color);
+}
+
+.team-member-location {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.team-member-bio {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--fg-muted);
+    flex: 1;
+    min-height: 0;
+}
+
+/* Responsive Team Grid */
+@media only screen and (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .team-member {
+        padding: 1.5rem;
+    }
+}

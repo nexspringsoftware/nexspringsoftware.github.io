@@ -10,187 +10,8 @@
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap">
 	<link rel="stylesheet" href="colors.css">
+	<link rel="stylesheet" href="styles.css">
 	<title>NexSpring Software</title>
-	<style>
-		@layer decoration {
-			body {
-				background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-				background-size: 3rem 3rem;
-
-				.box {
-					background-color: var(--bg-color);
-					border-style: solid;
-					border-width: 1px;
-					border-color: var(--grid-line);
-				}
-			}
-		}
-
-		@layer layout {
-			body {
-				width: 100%;
-				margin: 0;
-				display: flex;
-				flex-direction: column;
-				min-height: 100vh;
-				gap: 1rem;
-
-				header {
-					position: fixed;
-					width: 100vw;
-				}
-
-				header .container {
-					align-self: stretch;
-					height: 3rem;
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-				}
-
-				.container {
-					max-width: 60rem;
-					margin-left: auto;
-					margin-right: auto;
-					padding-left: 1rem;
-					padding-right: 1rem;
-				}
-
-				.header-offset {
-					margin-top: 3rem;
-				}
-
-				main {
-					flex: 1 1 auto;
-					display: flex;
-					flex-direction: column;
-					gap: 3rem;
-				}
-			}
-
-			.box>* {
-				margin-left: 1rem;
-				margin-right: 1rem;
-			}
-		}
-
-		@layer component {
-			.copy {
-				font-size: smaller;
-				color: var(--fg-muted);
-			}
-		}
-
-		body {
-			font-family: 'JetBrains Mono', monospace;
-			background-color: var(--bg-color);
-			color: var(--color);
-		}
-
-		h1 {
-			font-size: larger;
-			font-weight: bolder;
-			display: inline-flex;
-			align-items: center;
-			color: var(--color);
-			text-decoration: none;
-			gap: 0.5rem;
-
-			&::before {
-				content: "";
-				background-color: var(--accent);
-				width: 0.5rem;
-				height: 0.5rem;
-			}
-		}
-
-		button {
-			background-color: var(--bg-color);
-			border-style: solid;
-			border-width: 1pt;
-			border-color: var(--color);
-			color: var(--color);
-			padding: 0.5rem;
-			text-transform: uppercase;
-			font-family: inherit;
-			font-weight: bolder;
-			cursor: pointer;
-		}
-
-
-		@layer typography {
-			.hero {
-				font-size: 32pt;
-				text-transform: capitalize;
-			}
-
-			span.highlighted {
-				background-color: var(--bg-color);
-			}
-		}
-
-		.stats {}
-
-		.cards {
-			margin: 0;
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
-
-			counter-reset: card;
-
-			section {
-				.card-header {
-					&::before {
-						counter-increment: card;
-						content: counter(card);
-						color: var(--accent);
-					}
-
-					display: flex;
-					justify-content: space-between;
-				}
-
-				border-color: var(--grid-line);
-				padding: 0.5rem 1rem;
-			}
-		}
-
-		i.corner {
-			width: .5rem;
-			height: .5rem;
-			border-top: solid;
-			border-right: solid;
-			border-width: 2px;
-			border-color: var(--color);
-		}
-
-		#contact {
-			text-decoration: underline;
-			cursor: pointer;
-		}
-
-		#copied {
-			position: fixed;
-			width: 100%;
-			opacity: 0;
-			bottom: 0rem;
-			transition: visibility 0.2s, opacity 0.2s ease, bottom 0.2s ease;
-
-			&.visible {
-				opacity: 1;
-				bottom: 1rem;
-			}
-
-			div {
-				width: fit-content;
-				padding: .5rem;
-				border-radius: 5px;
-				background-color: var(--primary);
-				color: var(--fg-primary);
-				margin: 0 auto;
-			}
-		}
-	</style>
 </head>
 
 <body>
@@ -199,12 +20,18 @@
 			<a href="/">
 				<h1>NexSpring Software</h1>
 			</a>
-			<a href="mailto:contact@nexspring.ca"><button>Inquire</button></a>
+			<nav>
+				<a href="about.html" class="tab">About</a>
+				<a href="team.html" class="tab">Team</a>
+				<a href="contact.html" class="tab">Contact</a>
+			</nav>
 		</div>
 	</header>
 	<main class="container header-offset">
 		<section>
-			<h2 class="hero"><span class="highlighted">The bridge from state-of-the-art research to entreprise.</span></h2>
+			<h2 class="hero"><span class="highlighted">The bridge from state-of-the-art research to
+					enterprise.</span>
+			</h2>
 			<p>
 				<span class="highlighted">
 					We deliver tangible software innovation and excellence through our global network of
@@ -238,34 +65,10 @@
 				</section>
 			</div>
 		</section>
-
-		<section>
-			<h2><span class="highlighted">Contact</span></h2>
-			<p>
-				<span class="highlighted">
-					Challenge us at
-					<span id="contact" onclick="copy(this.innerText);">contact@nexspring.ca</span>,
-					we're up for it.
-				</span>
-			</p>
-		</section>
 	</main>
 	<footer class="box">
 		<span class="copy">Copyright &copy; 2025 NexSpring Software Inc.</span>
 	</footer>
-	<div id="copied">
-		<div>Copied!</div>
-	</div>
-	<script>
-		const copied_popup = document.getElementById("copied");
-		async function copy(text) {
-			await navigator.clipboard.writeText(text);
-			copied_popup.classList.add("visible");
-			setTimeout(() => {
-				copied_popup.classList.remove("visible");
-			}, 3000);
-		}
-	</script>
 </body>
 
 </html>
