@@ -262,6 +262,13 @@ section.box .team-grid-container {
 	align-items: stretch;
 }
 
+.team-member-link {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+	height: 100%;
+}
+
 .team-member {
     display: flex;
     flex-direction: column;
@@ -272,9 +279,9 @@ section.box .team-grid-container {
     height: 100%;
 }
 
-.team-member:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent);
+.team-member-link:hover .team-member {
+	transform: translateY(-2px);
+	border-color: var(--accent);
 }
 
 .team-member-photo {

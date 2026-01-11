@@ -1,32 +1,43 @@
 # NexSpring Software Website
 
-## Team Member Photo Requirements
+## Running Locally
 
-### Aspect Ratio
-- **Square (1:1)** - Required
-- Photos must be square format to display correctly
+```bash
+python3 -m http.server 8000
+```
 
-### Recommended Pixel Dimensions
-- **Minimum**: 400×400px
-- **Recommended**: 600×600px to 800×800px
-- **Maximum**: 1200×1200px (larger files may load slower)
+Open `http://localhost:8000` in your browser.
 
-### File Format
-- **Format**: JPG or PNG
-- **File Size**: Under 200KB per image (for faster loading)
-- **Quality**: High quality, but compressed for web
+## Adding Your Team Member Page
 
-### How It Works
-- The photo container uses `aspect-ratio: 1` (square)
-- Images use `object-fit: cover` which means:
-  - Square photos fit perfectly
-  - Non-square photos will be cropped to square (centered)
-  - Images automatically scale to fill the container
+### Step 1: Create Your HTML File
+1. Copy `team/TEMPLATE.html` to `team/your-name.html` (lowercase, hyphens)
+2. Update title tag, name, and location
 
-### Summary
-✅ **Use square photos (1:1 aspect ratio)**  
-✅ **Recommended size: 600×600px to 800×800px**  
-✅ **Format: JPG or PNG**  
-✅ **File size: Under 200KB**
+### Step 2: Add Your Profile Picture
+1. Save photo as `images/team/your-name.jpg` (square, 600-800px, <200KB)
 
-The CSS handles all scaling and cropping automatically, so square photos work best.
+### Step 3: Add Your Card to Team Page
+1. Open `team.html`
+2. Add your card in `.team-grid`:
+   ```html
+   <a href="team/your-name.html" class="team-member-link">
+       <div class="team-member">
+           <div class="team-member-photo">
+               <img src="images/team/your-name.jpg" alt="Your Name">
+           </div>
+           <div class="team-member-info">
+               <h3>Your Name</h3>
+               <p class="team-member-location">Your Location</p>
+               <p class="team-member-bio">Your brief bio (under 30 words).</p>
+           </div>
+       </div>
+   </a>
+   ```
+
+## Photo Requirements
+
+- Square (1:1 aspect ratio)
+- 600×600px to 800×800px recommended
+- JPG or PNG format
+- Under 200KB file size

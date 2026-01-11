@@ -8,3 +8,10 @@ async function copy(text) {
         copied_popup.classList.remove("visible");
     }, 3000);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const emailEl = document.getElementById("contact-email");
+    if (emailEl) {
+        emailEl.addEventListener('click', () => copy(emailEl.innerText));
+    }
+});
