@@ -137,7 +137,7 @@
 	</card-grid>
 </section>
 
-<section id="contact">
+<section id="contact" class="box">
 	<h2><span>Contact</span></h2>
 	<p>
 		<span>
