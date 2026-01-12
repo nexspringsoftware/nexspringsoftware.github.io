@@ -135,6 +135,7 @@
 				background-color: var(--accent);
 				width: 0.5rem;
 				height: 0.5rem;
+				flex: 1 0 auto;
 			}
 		}
 
