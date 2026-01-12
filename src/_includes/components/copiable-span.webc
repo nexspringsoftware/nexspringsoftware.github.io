@@ -1,0 +1,19 @@
+<span class="copiable" webc:root>
+	<slot></slot>
+</span>
+<!--trim-whitespace-->
+
+<style>
+	.copiable {
+		cursor: pointer;
+		text-decoration: underline;
+		display: inline;
+		white-space: nowrap;
+
+		&>svg {
+			stroke-width: 1px;
+			display: inline;
+			vertical-align: middle;
+		}
+	}
+</style>
