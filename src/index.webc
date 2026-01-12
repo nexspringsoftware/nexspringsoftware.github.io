@@ -1,0 +1,48 @@
+<style webc:scoped>
+	.hero {
+		font-size: 32pt;
+		text-transform: capitalize;
+	}
+</style>
+
+<section>
+	<h2 class="hero"><span>The bridge from state-of-the-art research to entreprise.</span></h2>
+	<p>
+		<span>
+			We deliver tangible software innovation and excellence through our global network of
+			academic and engineering
+			partners. 1000s of publications, integrated in your system.
+		</span>
+	</p>
+</section>
+
+<section class="box">
+	<h2>Areas of Expertise</h2>
+	<card-grid>
+		<card-item>
+			<h3>AI for SE and SE for AI</h3>
+			<p>Principled and reliable AI systems engineering and AI enhanced software engineering.</p>
+		</card-item>
+		<card-item>
+			<h3>Performance Engineering</h3>
+			<p>Proactive throughput, scale and resource optimization.</p>
+		</card-item>
+		<card-item>
+			<h3>Reliability Engineering</h3>
+			<p>Delivery of reliable, fault-tolerant and available software under real-world stress.</p>
+		</card-item>
+		<card-item>
+			<h3>DevOps</h3>
+			<p>Efficient automated software development, testing, delivery and monitoring.</p>
+		</card-item>
+	</card-grid>
+</section>
+
+<section>
+	<h2><span>Contact</span></h2>
+	<p>
+		<span>
+			Challenge us at <a href="mailto:contact@nexspring.ca">contact@nexspring.ca</a>, we're up for it.
+		</span>
+	</p>
+</section>

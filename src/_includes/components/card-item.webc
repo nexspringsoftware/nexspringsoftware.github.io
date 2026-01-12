@@ -1,0 +1,33 @@
+<div webc:root>
+	<div class="header">
+		<i class="corner"></i>
+	</div>
+	<slot></slot>
+</div>
+
+<style webc:scoped>
+	:host {
+		.header {
+			&::before {
+				counter-increment: card;
+				content: counter(card);
+				color: var(--accent);
+			}
+
+			display: flex;
+			justify-content: space-between;
+		}
+
+		border-color: var(--grid-line);
+		padding: 0.5rem 1rem;
+	}
+
+	i.corner {
+		width: .5rem;
+		height: .5rem;
+		border-top: solid;
+		border-right: solid;
+		border-width: 2px;
+		border-color: var(--color);
+	}
+</style>

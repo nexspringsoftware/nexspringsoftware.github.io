@@ -1,0 +1,28 @@
+<div webc:root>
+</div>
+
+<style webc:scoped>
+:host {
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+
+	counter-reset: card;
+
+	.card {
+		.header {
+			&::before {
+				counter-increment: card;
+				content: counter(card);
+				color: var(--accent);
+			}
+
+			display: flex;
+			justify-content: space-between;
+		}
+
+		border-color: var(--grid-line);
+		padding: 0.5rem 1rem;
+	}
+}
+</style>
