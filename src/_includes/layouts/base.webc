@@ -18,7 +18,7 @@
 			body {
 				background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
 				background-size: 3.333rem 3.333rem;
-				background-position: 50% 50%;
+				background-position: 50% 0;
 
 				.box {
 					background-color: var(--bg-color);
@@ -26,15 +26,26 @@
 					border-width: 1px;
 					border-color: var(--grid-line);
 				}
+
+				:not(.box) span {
+					background-color: var(--bg-color);
+				}
+
+				a {
+					color: var(--color);
+				}
+
+				header {
+					background-color: var(--bg-color);
+					border-bottom: 1px solid var(--grid-line);
+				}
+
+				footer {
+					background-color: var(--bg-color);
+					border-top: 1px solid var(--grid-line);
+				}
 			}
 
-			:not(.box) span {
-				background-color: var(--bg-color);
-			}
-
-			a {
-				color: var(--color);
-			}
 		}
 
 		@layer layout {
@@ -53,7 +64,7 @@
 
 				header .container {
 					align-self: stretch;
-					height: 3rem;
+					height: 4rem;
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
@@ -67,15 +78,12 @@
 					padding-right: 1rem;
 				}
 
-				.header-offset {
-					margin-top: 3rem;
-				}
-
 				main {
 					flex: 1 1 auto;
 					display: flex;
 					flex-direction: column;
 					gap: 3rem;
+					margin-top: 4rem;
 				}
 			}
 
@@ -113,66 +121,46 @@
 			}
 		}
 
-		button {
-			background-color: var(--bg-color);
-			border-style: solid;
-			border-width: 1pt;
-			border-color: var(--color);
-			color: var(--color);
-			padding: 0.5rem;
-			text-transform: uppercase;
-			font-family: inherit;
-			font-weight: bolder;
-			cursor: pointer;
-		}
+		nav ul {
+			display: flex;
+			gap: 1rem;
+			list-style: none;
 
-
-		#contact {
-			text-decoration: underline;
-			cursor: pointer;
-		}
-
-		#copied {
-			position: fixed;
-			width: 100%;
-			opacity: 0;
-			bottom: 0rem;
-			transition: visibility 0.2s, opacity 0.2s ease, bottom 0.2s ease;
-
-			&.visible {
-				opacity: 1;
-				bottom: 1rem;
-			}
-
-			div {
-				width: fit-content;
-				padding: .5rem;
-				border-radius: 5px;
-				background-color: var(--primary);
-				color: var(--fg-primary);
-				margin: 0 auto;
+			li a.boxed {
+				background-color: var(--bg-color);
+				border-style: solid;
+				border-width: 1pt;
+				border-color: var(--color);
+				color: var(--color);
+				padding: 0.5rem;
+				text-transform: uppercase;
+				font-family: inherit;
+				font-weight: bolder;
+				cursor: pointer;
 			}
 		}
 	</style>
 </head>
 
 <body>
-	<header class="box">
-		<div class="topbar container">
-			<a href="/">
+	<header>
+		<div class="container">
+			<a href="/#top">
 				<h1>NexSpring Software</h1>
 			</a>
 			<nav>
-				<a href="about.html" class="tab">About</a>
-				<a href="team.html" class="tab">Team</a>
-				<a href="contact.html" class="tab">Contact</a>
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#team">Team</a></li>
+					<li><a class="boxed" href="#contact">Contact</a></li>
+				</ul>
 			</nav>
 		</div>
 	</header>
 
-	<main class="container header-offset" @raw="content"></main>
+	<main class="container" @raw="content"></main>
 
-	<footer class="box">
+	<footer>
 		<span class="copy">Copyright &copy; 2025 NexSpring Software Inc.</span>
 	</footer>
 
