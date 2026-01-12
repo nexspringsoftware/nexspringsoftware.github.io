@@ -85,6 +85,7 @@
 					flex-direction: column;
 					gap: 3rem;
 					margin-top: 4rem;
+					margin-bottom: 30vh;
 				}
 			}
 
@@ -110,6 +111,7 @@
 				font-family: inherit;
 				font-weight: bolder;
 				cursor: pointer;
+				text-decoration: unset;
 			}
 		}
 
