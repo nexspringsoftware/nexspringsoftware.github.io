@@ -1,0 +1,49 @@
+<div class="container">
+	<slot>Copied!</slot>
+</div>
+
+<style webc:scoped>
+	:host {
+		pointer-events: none;
+		position: fixed;
+		width: 100%;
+		opacity: 0;
+		bottom: 0rem;
+		transition: visibility 0.2s, opacity 0.2s ease, bottom 0.2s ease;
+	}
+
+	:host.visible {
+		opacity: 1;
+		bottom: 1rem;
+	}
+
+	.container {
+		width: fit-content;
+		padding: .5rem;
+		border-radius: 5px;
+		background-color: var(--primary);
+		color: var(--fg-primary);
+		margin: 0 auto;
+	}
+</style>
+
+<script type="module">
+	customElements.define("copy-popup", class extends HTMLElement {
+		connectedCallback() {
+			for (const el of document.querySelectorAll(".copiable")) {
+				el.addEventListener("click", e => this.copy());
+			}
+		}
+		async copy(text) {
+			await navigator.clipboard.writeText(text);
+			if (this.classList.contains("visible")) {
+				return;
+			}
+			this.classList.add("visible");
+			setTimeout(() => {
+				this.classList.remove("visible");
+			}, 3000);
+		}
+
+	});
+</script>
