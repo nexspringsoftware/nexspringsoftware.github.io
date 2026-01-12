@@ -3,6 +3,18 @@
 		font-size: 32pt;
 		text-transform: capitalize;
 	}
+
+	card-item {
+		img.portrait {
+			background-color: var(--muted);
+			max-height: 12rem;
+			max-width: 12rem;
+			min-height: 12rem;
+			min-width: 12rem;
+			margin: 0 auto;
+			display: block;
+		}
+	}
 </style>
 
 <section>
@@ -66,7 +78,50 @@
 	</p>
 </section>
 
-<section id="team">
+<section id="team" class="box">
+	<h2>Our Team</h2>
+	<card-grid>
+		<card-item>
+			<img class="portrait" alt="Hanyang Hu's portrait.">
+			<h3>Hanyang Hu</h3>
+			<p>
+				Helps enterprises refine software innovation strategy and align it with complex engineering initiatives in
+				client’s digital and AI transformation.
+			</p>
+			<p>
+				<a href="mailto:hyhu@nexspring.ca">hyhu@nexspring.ca</a>
+			</p>
+		</card-item>
+		<card-item>
+			<img class="portrait" alt="Jianchen Zhao's portrait.">
+			<h3>Jianchen Zhao</h3>
+			<p>
+				Architect high-quality, scalable engineering solutions that turn visionary research into reliable production
+				impact.
+			</p>
+			<p>
+				<a href="mailto:jian@nexspring.ca">jian@nexspring.ca</a>
+			</p>
+		</card-item>
+		<card-item>
+			<img class="portrait" alt="Prof. Heng Li's portrait.">
+			<h3>Prof. Heng Li</h3>
+			<p></p>
+			<p><a href="mailto:heng.li@polymtl.ca">heng.li@polymtl.ca</a></p>
+		</card-item>
+		<card-item>
+			<img class="portrait" alt="Prof. Tse-Hsun (Peter) Chen's portrait.">
+			<h3>Prof. Tse-Hsun (Peter) Chen</h3>
+			<p></p>
+			<p><a href="mailto:tse-hsun.chen@concordia.ca">tse-hsun.chen@concordia.ca</a></p>
+		</card-item>
+		<card-item>
+			<img class="portrait" alt="Prof. Weiyi (Ian) Shang's portrait.">
+			<h3>Prof. Weiyi (Ian) Shang</h3>
+			<p></p>
+			<p><a href="mailto:wshang@uwaterloo.ca">wshang@uwaterloo.ca</a></p>
+		</card-item>
+	</card-grid>
 </section>
 
 <section id="contact">
