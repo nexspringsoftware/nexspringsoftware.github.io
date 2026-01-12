@@ -12,7 +12,7 @@ export default function (config) {
   });
   config.addPlugin(RenderPlugin);
   config.addGlobalData("layout", "layouts/base");
-  config.addPassthroughCopy("src/styles.css");
+  config.addPassthroughCopy("src/colors.css");
   config.addTransform("trim-whitespace", function (content) {
     const trimCommentsRegex =
       /\s*<!---*\s*trim-whitespace(?:="(?<count>\d+)")?\s*-*-->\s*/gim;

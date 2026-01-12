@@ -1,44 +1,48 @@
+<style webc:scoped>
+	.hero {
+		font-size: 32pt;
+		text-transform: capitalize;
+	}
+</style>
+
 <section>
-	<h2 class="hero"><span class="highlighted">The bridge from state-of-the-art research to entreprise.</span></h2>
+	<h2 class="hero"><span>The bridge from state-of-the-art research to entreprise.</span></h2>
 	<p>
-		<span class="highlighted">
+		<span>
 			We deliver tangible software innovation and excellence through our global network of
 			academic and engineering
 			partners. 1000s of publications, integrated in your system.
 		</span>
 	</p>
 </section>
+
 <section class="box">
 	<h2>Areas of Expertise</h2>
-	<div class="cards">
-		<section>
-			<div class="card-header"><i class="corner"></i></div>
+	<card-grid>
+		<card-item>
 			<h3>AI for SE and SE for AI</h3>
 			<p>Principled and reliable AI systems engineering and AI enhanced software engineering.</p>
-		</section>
-		<section>
-			<div class="card-header"><i class="corner"></i></div>
+		</card-item>
+		<card-item>
 			<h3>Performance Engineering</h3>
 			<p>Proactive throughput, scale and resource optimization.</p>
-		</section>
-		<section>
-			<div class="card-header"><i class="corner"></i></div>
+		</card-item>
+		<card-item>
 			<h3>Reliability Engineering</h3>
 			<p>Delivery of reliable, fault-tolerant and available software under real-world stress.</p>
-		</section>
-		<section>
-			<div class="card-header"><i class="corner"></i></div>
+		</card-item>
+		<card-item>
 			<h3>DevOps</h3>
 			<p>Efficient automated software development, testing, delivery and monitoring.</p>
-		</section>
-	</div>
+		</card-item>
+	</card-grid>
 </section>
 
 <section>
-	<h2><span class="highlighted">Contact</span></h2>
+	<h2><span>Contact</span></h2>
 	<p>
-		<span class="highlighted">
-			Challenge us at <copiable-span>contact@nexspring.ca</copiable-span>, we're up for it.
+		<span>
+			Challenge us at <a href="mailto:contact@nexspring.ca">contact@nexspring.ca</a>, we're up for it.
 		</span>
 	</p>
 </section>
