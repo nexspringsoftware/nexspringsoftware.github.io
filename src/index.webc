@@ -12,7 +12,7 @@
 			min-height: 12rem;
 			min-width: 12rem;
 			margin: 0 auto;
-			display: block;
+			display: none;
 		}
 	}
 </style>
