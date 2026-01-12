@@ -5,20 +5,21 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="color-scheme" content="light dark">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link webc:keep rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap">
-	<link webc:keep rel="stylesheet" href="/colors.css">
-	<link webc:keep rel="stylesheet" :href="getBundleFileUrl('css')">
-	<script webc:keep type="module" :src="getBundleFileUrl('js')"></script>
+
 	<title>NexSpring Software</title>
-	<style webc:keep webc:scoped>
+
+	<script webc:keep type="module" @raw="getBundle('js')"></script>
+
+	<style webc:keep @raw="getBundle('css')"></style>
+	<style webc:keep>
+		@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
+		@import url("/colors.css");
+
 		@layer decoration {
 			body {
 				background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
 				background-size: 3.333rem 3.333rem;
-				background-position: 50% 50%;
+				background-position: 50% 0;
 
 				.box {
 					background-color: var(--bg-color);
@@ -26,15 +27,26 @@
 					border-width: 1px;
 					border-color: var(--grid-line);
 				}
+
+				:not(.box) span {
+					background-color: var(--bg-color);
+				}
+
+				a {
+					color: var(--color);
+				}
+
+				header {
+					background-color: var(--bg-color);
+					border-bottom: 1px solid var(--grid-line);
+				}
+
+				footer {
+					background-color: var(--bg-color);
+					border-top: 1px solid var(--grid-line);
+				}
 			}
 
-			:not(.box) span {
-				background-color: var(--bg-color);
-			}
-
-			a {
-				color: var(--color);
-			}
 		}
 
 		@layer layout {
@@ -53,7 +65,7 @@
 
 				header .container {
 					align-self: stretch;
-					height: 3rem;
+					height: 4rem;
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
@@ -67,15 +79,13 @@
 					padding-right: 1rem;
 				}
 
-				.header-offset {
-					margin-top: 3rem;
-				}
-
 				main {
 					flex: 1 1 auto;
 					display: flex;
 					flex-direction: column;
 					gap: 3rem;
+					margin-top: 4rem;
+					margin-bottom: 30vh;
 				}
 			}
 
@@ -85,9 +95,24 @@
 			}
 		}
 
-		.copy {
-			font-size: smaller;
-			color: var(--fg-muted);
+		nav ul {
+			display: flex;
+			gap: 1rem;
+			list-style: none;
+
+			li a.boxed {
+				background-color: var(--bg-color);
+				border-style: solid;
+				border-width: 1pt;
+				border-color: var(--color);
+				color: var(--color);
+				padding: 0.5rem;
+				text-transform: uppercase;
+				font-family: inherit;
+				font-weight: bolder;
+				cursor: pointer;
+				text-decoration: unset;
+			}
 		}
 
 		body {
@@ -113,64 +138,39 @@
 			}
 		}
 
-		button {
-			background-color: var(--bg-color);
-			border-style: solid;
-			border-width: 1pt;
-			border-color: var(--color);
-			color: var(--color);
-			padding: 0.5rem;
-			text-transform: uppercase;
-			font-family: inherit;
-			font-weight: bolder;
-			cursor: pointer;
+		p {
+			text-align: justify;
 		}
 
-
-		#contact {
-			text-decoration: underline;
-			cursor: pointer;
-		}
-
-		#copied {
-			position: fixed;
-			width: 100%;
-			opacity: 0;
-			bottom: 0rem;
-			transition: visibility 0.2s, opacity 0.2s ease, bottom 0.2s ease;
-
-			&.visible {
-				opacity: 1;
-				bottom: 1rem;
-			}
-
-			div {
-				width: fit-content;
-				padding: .5rem;
-				border-radius: 5px;
-				background-color: var(--primary);
-				color: var(--fg-primary);
-				margin: 0 auto;
-			}
+		.copy {
+			font-size: smaller;
+			color: var(--fg-muted);
 		}
 	</style>
 </head>
 
 <body>
-	<header class="box">
-		<div class="topbar container">
-			<a href="/">
+	<header>
+		<div class="container">
+			<a href="/#top">
 				<h1>NexSpring Software</h1>
 			</a>
-			<a href="mailto:contact@nexspring.ca"><button>Inquire</button></a>
+			<nav>
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#team">Team</a></li>
+					<li><a class="boxed" href="#contact">Contact</a></li>
+				</ul>
+			</nav>
 		</div>
 	</header>
 
-	<main class="container header-offset" @raw="content"></main>
+	<main class="container" @raw="content"></main>
 
-	<footer class="box">
+	<footer>
 		<span class="copy">Copyright &copy; 2025 NexSpring Software Inc.</span>
 	</footer>
+
 	<copy-popup></copy-popup>
 </body>
 

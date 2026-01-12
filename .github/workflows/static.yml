@@ -22,6 +22,24 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate HTML5
+        uses: Cyb3r-Jak3/html5validator-action@v1.7.2
+        with:
+          root: .
+          exclude: node_modules
+          
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1.9.1
+        with:
+          args: --verbose --no-progress './**/*.html'
+
   # Single deploy job since we're just deploying
   deploy:
     environment:
