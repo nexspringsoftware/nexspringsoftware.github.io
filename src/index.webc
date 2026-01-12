@@ -50,33 +50,37 @@
 	</card-grid>
 </section>
 
-<section id="about">
-	<h2><span>About Us</span></h2>
-	<p>
-		<span>
-			NexSpring Software (NexSpring) bridges the critical gap between advanced software engineering research and
-			industrial application.
+<div class="box">
+	<section id="about">
+		<h2>About Us</h2>
+		<p>
+			<em>
+				NexSpring Software (NexSpring) bridges the critical gap between advanced software engineering research and
+				industrial application.
+			</em>
+		</p>
+		<p>
 			Based in Canada, we are a vertically aligned commercialization platform for organizations pursuing high-impact
 			innovation. We believe that true technical success is inseparable from business strategy. Therefore, we do not
-			view engineering as a downstream activity, but as a strategic discipline that must be integrated with the business
+			view engineering as a downstream activity, but as a strategic discipline that must be integrated with the
+			business
 			vision from day one.
 			Our approach unifies strategic foresight with deep-tech engineering rigor. By aligning the "why" of the business
 			case with the "how" of technical execution, we transform abstract proofs-of-concept into robust, deployable
-			assets. NexSpring offers a unique value proposition: the intellectual depth to solve complex research challenges,
+			assets. NexSpring offers a unique value proposition: the intellectual depth to solve complex research
+			challenges,
 			combined with the operational discipline to deliver industrial-grade solutions at scale.
-		</span>
-	<p>
-</section>
+		<p>
+	</section>
 
-<section>
-	<h2><span>Our Vision</span></h2>
-	<p>
-		<span>
+	<section>
+		<h2>Our Vision</h2>
+		<p>
 			Making software innovations more strategically aligned, scientifically trustworthy, commercially viable and
 			technologically accessible.
-		</span>
-	</p>
-</section>
+		</p>
+	</section>
+</div>
 
 <section id="team" class="box">
 	<h2>Our Team</h2>
