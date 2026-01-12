@@ -5,15 +5,16 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="color-scheme" content="light dark">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link webc:keep rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap">
-	<link webc:keep rel="stylesheet" href="/colors.css">
-	<link webc:keep rel="stylesheet" :href="getBundleFileUrl('css')">
-	<script webc:keep type="module" :src="getBundleFileUrl('js')"></script>
+
 	<title>NexSpring Software</title>
-	<style webc:scoped>
+
+	<script webc:keep type="module" @raw="getBundle('js')"></script>
+
+	<style webc:keep @raw="getBundle('css')"></style>
+	<style webc:keep>
+		@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
+		@import url("/colors.css");
+
 		@layer decoration {
 			body {
 				background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
@@ -93,9 +94,23 @@
 			}
 		}
 
-		.copy {
-			font-size: smaller;
-			color: var(--fg-muted);
+		nav ul {
+			display: flex;
+			gap: 1rem;
+			list-style: none;
+
+			li a.boxed {
+				background-color: var(--bg-color);
+				border-style: solid;
+				border-width: 1pt;
+				border-color: var(--color);
+				color: var(--color);
+				padding: 0.5rem;
+				text-transform: uppercase;
+				font-family: inherit;
+				font-weight: bolder;
+				cursor: pointer;
+			}
 		}
 
 		body {
@@ -121,23 +136,13 @@
 			}
 		}
 
-		nav ul {
-			display: flex;
-			gap: 1rem;
-			list-style: none;
+		p {
+			text-align: justify;
+		}
 
-			li a.boxed {
-				background-color: var(--bg-color);
-				border-style: solid;
-				border-width: 1pt;
-				border-color: var(--color);
-				color: var(--color);
-				padding: 0.5rem;
-				text-transform: uppercase;
-				font-family: inherit;
-				font-weight: bolder;
-				cursor: pointer;
-			}
+		.copy {
+			font-size: smaller;
+			color: var(--fg-muted);
 		}
 	</style>
 </head>
