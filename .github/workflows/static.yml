@@ -37,6 +37,8 @@ jobs:
         uses: denoland/setup-deno@v2
         with:
           deno-version: latest
+      - name: Install Dependencies
+        run: deno install
       - name: Build Site
         run: deno x @11ty/eleventy
       - name: Upload artifact
