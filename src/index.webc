@@ -18,7 +18,7 @@
 </style>
 
 <section>
-	<h2 class="hero"><span>The bridge from state-of-the-art research to entreprise.</span></h2>
+	<h2 class="hero"><span>The bridge from state-of-the-art research to enterprise.</span></h2>
 	<p>
 		<span>
 			We deliver tangible software innovation and excellence through our global network of
@@ -111,8 +111,7 @@
 			<img class="portrait" alt="Prof. Heng Li's portrait.">
 			<h3>Prof. Heng Li</h3>
 			<p>
-				Associate professor in the Computer Engineering
-				department at Polytechnique Montréal.
+				Making software more sustainable and reliable, primarily through observability engineering.
 			</p>
 			<p><a href="mailto:heng.li@polymtl.ca">heng.li@polymtl.ca</a></p>
 		</card-item>
@@ -120,8 +119,7 @@
 			<img class="portrait" alt="Prof. Tse-Hsun (Peter) Chen's portrait.">
 			<h3>Prof. Tse-Hsun (Peter) Chen</h3>
 			<p>
-				Associate professor in the Computer Science
-				and Software Engineering department at Concordia University.
+				Unifies AI and software engineering to build high-quality and trustworthy systems that scale from research prototypes to mission-critical production deployments.
 			</p>
 			<p><a href="mailto:tse-hsun.chen@concordia.ca">tse-hsun.chen@concordia.ca</a></p>
 		</card-item>
