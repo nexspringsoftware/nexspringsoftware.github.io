@@ -43,18 +43,21 @@
 		}
 
 		@layer layout {
-			body {
+			:root {
 				--header-height: 4rem;
+			}
+
+			html {
+				scroll-behavior: smooth;
+				scroll-padding-top: calc(var(--header-height) + 3rem);
+			}
+
+			body {
 				margin: 0;
 				display: flex;
 				flex-direction: column;
 				min-height: 100vh;
-				scroll-behavior: smooth;
 				padding-top: var(--header-height);
-
-				section {
-					scroll-margin-top: calc(var(--header-height) + 6rem);
-				}
 
 				header {
 					height: var(--header-height);
@@ -86,6 +89,8 @@
 				}
 
 				main {
+					padding-bottom: 50vh;
+
 					>* {
 						margin-top: 3rem;
 						margin-bottom: 3rem;
