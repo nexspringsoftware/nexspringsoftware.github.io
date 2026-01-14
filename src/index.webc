@@ -1,9 +1,4 @@
 <style webc:scoped>
-	.hero {
-		font-size: 32pt;
-		text-transform: capitalize;
-	}
-
 	card-item {
 		img.portrait {
 			background-color: var(--muted);

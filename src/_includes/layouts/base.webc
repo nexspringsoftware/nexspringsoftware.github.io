@@ -151,6 +151,11 @@
 			font-size: smaller;
 			color: var(--fg-muted);
 		}
+
+		.hero {
+			font-size: 32pt;
+			text-transform: capitalize;
+		}
 	</style>
 </head>
 
