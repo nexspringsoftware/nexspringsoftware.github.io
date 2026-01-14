@@ -1,19 +1,17 @@
-<style webc:scoped>
-	card-item {
-		img.portrait {
-			background-color: var(--muted);
-			max-height: 12rem;
-			max-width: 12rem;
-			min-height: 12rem;
-			min-width: 12rem;
-			margin: 0 auto;
-			display: none;
-		}
+<style>
+	img.portrait {
+		background-color: var(--muted);
+		max-height: 12rem;
+		max-width: 12rem;
+		min-height: 12rem;
+		min-width: 12rem;
+		margin: 0 auto;
+		display: none;
 	}
 </style>
 
-<section>
-	<h2 class="hero"><span>The bridge from state-of-the-art research to entreprise.</span></h2>
+<section class="hero">
+	<h2><span>The bridge from state-of-the-art research to entreprise.</span></h2>
 	<p>
 		<span>
 			We deliver tangible software innovation and excellence through our global network of
@@ -23,29 +21,31 @@
 	</p>
 </section>
 
-<section class="box">
-	<h2>Areas of Expertise</h2>
-	<card-grid>
-		<card-item>
-			<h3>AI for SE and SE for AI</h3>
-			<p>Principled and reliable AI systems engineering and AI enhanced software engineering.</p>
-		</card-item>
-		<card-item>
-			<h3>Performance Engineering</h3>
-			<p>Proactive throughput, scale and resource optimization.</p>
-		</card-item>
-		<card-item>
-			<h3>Reliability Engineering</h3>
-			<p>Delivery of reliable, fault-tolerant and available software under real-world stress.</p>
-		</card-item>
-		<card-item>
-			<h3>DevOps</h3>
-			<p>Efficient automated software development, testing, delivery and monitoring.</p>
-		</card-item>
-	</card-grid>
-</section>
+<box>
+	<section>
+		<h2>Areas of Expertise</h2>
+		<card-grid>
+			<card-item>
+				<h3>AI for SE and SE for AI</h3>
+				<p>Principled and reliable AI systems engineering and AI enhanced software engineering.</p>
+			</card-item>
+			<card-item>
+				<h3>Performance Engineering</h3>
+				<p>Proactive throughput, scale and resource optimization.</p>
+			</card-item>
+			<card-item>
+				<h3>Reliability Engineering</h3>
+				<p>Delivery of reliable, fault-tolerant and available software under real-world stress.</p>
+			</card-item>
+			<card-item>
+				<h3>DevOps</h3>
+				<p>Efficient automated software development, testing, delivery and monitoring.</p>
+			</card-item>
+		</card-grid>
+	</section>
+</box>
 
-<div class="box">
+<box>
 	<section id="about">
 		<h2>About Us</h2>
 		<p>
@@ -75,68 +75,72 @@
 			technologically accessible.
 		</p>
 	</section>
-</div>
+</box>
 
-<section id="team" class="box">
-	<h2>Our Team</h2>
-	<card-grid>
-		<card-item>
-			<img class="portrait" alt="Hanyang Hu's portrait.">
-			<h3>Hanyang Hu</h3>
-			<p>
-				Helps enterprises refine software innovation strategy and align it with complex engineering initiatives in
-				client’s digital and AI transformation.
-			</p>
-			<p>
-				<a href="mailto:hyhu@nexspring.ca">hyhu@nexspring.ca</a>
-			</p>
-		</card-item>
-		<card-item>
-			<img class="portrait" alt="Jianchen Zhao's portrait.">
-			<h3>Jianchen Zhao</h3>
-			<p>
-				Architects high-quality, scalable engineering solutions that turn visionary research into reliable production
-				impact.
-			</p>
-			<p>
-				<a href="mailto:jian@nexspring.ca">jian@nexspring.ca</a>
-			</p>
-		</card-item>
-		<card-item>
-			<img class="portrait" alt="Prof. Heng Li's portrait.">
-			<h3>Prof. Heng Li</h3>
-			<p>
-				Associate professor in the Computer Engineering
-				department at Polytechnique Montréal.
-			</p>
-			<p><a href="mailto:heng.li@polymtl.ca">heng.li@polymtl.ca</a></p>
-		</card-item>
-		<card-item>
-			<img class="portrait" alt="Prof. Tse-Hsun (Peter) Chen's portrait.">
-			<h3>Prof. Tse-Hsun (Peter) Chen</h3>
-			<p>
-				Associate professor in the Computer Science
-				and Software Engineering department at Concordia University.
-			</p>
-			<p><a href="mailto:tse-hsun.chen@concordia.ca">tse-hsun.chen@concordia.ca</a></p>
-		</card-item>
-		<card-item>
-			<img class="portrait" alt="Prof. Weiyi (Ian) Shang's portrait.">
-			<h3>Prof. Weiyi (Ian) Shang</h3>
-			<p>
-				Associate professor in the Electrical and Computer
-				Engineering department at the University of Waterloo.
-			</p>
-			<p><a href="mailto:wshang@uwaterloo.ca">wshang@uwaterloo.ca</a></p>
-		</card-item>
-	</card-grid>
-</section>
+<box>
+	<section id="team">
+		<h2>Our Team</h2>
+		<card-grid>
+			<card-item>
+				<img class="portrait" alt="Hanyang Hu's portrait.">
+				<h3>Hanyang Hu</h3>
+				<p>
+					Helps enterprises refine software innovation strategy and align it with complex engineering initiatives in
+					client’s digital and AI transformation.
+				</p>
+				<p>
+					<a href="mailto:hyhu@nexspring.ca">hyhu@nexspring.ca</a>
+				</p>
+			</card-item>
+			<card-item>
+				<img class="portrait" alt="Jianchen Zhao's portrait.">
+				<h3>Jianchen Zhao</h3>
+				<p>
+					Architects high-quality, scalable engineering solutions that turn visionary research into reliable production
+					impact.
+				</p>
+				<p>
+					<a href="mailto:jian@nexspring.ca">jian@nexspring.ca</a>
+				</p>
+			</card-item>
+			<card-item>
+				<img class="portrait" alt="Prof. Heng Li's portrait.">
+				<h3>Prof. Heng Li</h3>
+				<p>
+					Associate professor in the Computer Engineering
+					department at Polytechnique Montréal.
+				</p>
+				<p><a href="mailto:heng.li@polymtl.ca">heng.li@polymtl.ca</a></p>
+			</card-item>
+			<card-item>
+				<img class="portrait" alt="Prof. Tse-Hsun (Peter) Chen's portrait.">
+				<h3>Prof. Tse-Hsun (Peter) Chen</h3>
+				<p>
+					Associate professor in the Computer Science
+					and Software Engineering department at Concordia University.
+				</p>
+				<p><a href="mailto:tse-hsun.chen@concordia.ca">tse-hsun.chen@concordia.ca</a></p>
+			</card-item>
+			<card-item>
+				<img class="portrait" alt="Prof. Weiyi (Ian) Shang's portrait.">
+				<h3>Prof. Weiyi (Ian) Shang</h3>
+				<p>
+					Associate professor in the Electrical and Computer
+					Engineering department at the University of Waterloo.
+				</p>
+				<p><a href="mailto:wshang@uwaterloo.ca">wshang@uwaterloo.ca</a></p>
+			</card-item>
+		</card-grid>
+	</section>
+</box>
 
-<section id="contact" class="box">
-	<h2><span>Contact</span></h2>
-	<p>
-		<span>
-			Challenge us at <a href="mailto:contact@nexspring.ca">contact@nexspring.ca</a>, we're up for it.
-		</span>
-	</p>
-</section>
+<box>
+	<section id="contact">
+		<h2><span>Contact</span></h2>
+		<p>
+			<span>
+				Challenge us at <a href="mailto:contact@nexspring.ca">contact@nexspring.ca</a>, we're up for it.
+			</span>
+		</p>
+	</section>
+</box>
