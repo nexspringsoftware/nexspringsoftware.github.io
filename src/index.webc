@@ -78,58 +78,59 @@
 </box>
 
 <box>
-<section id="team">
-	<h2>Our Team</h2>
-	<card-grid>
-		<card-item>
-			<img class="portrait" alt="Hanyang Hu's portrait.">
-			<h3>Hanyang Hu</h3>
-			<p>
-				Helps enterprises refine software innovation strategy and align it with complex engineering initiatives in
-				client’s digital and AI transformation.
-			</p>
-			<p>
-				<a href="mailto:hyhu@nexspring.ca">hyhu@nexspring.ca</a>
-			</p>
-		</card-item>
-		<card-item>
-			<img class="portrait" alt="Jianchen Zhao's portrait.">
-			<h3>Jianchen Zhao</h3>
-			<p>
-				Architects high-quality, scalable engineering solutions that turn visionary research into reliable production
-				impact.
-			</p>
-			<p>
-				<a href="mailto:jian@nexspring.ca">jian@nexspring.ca</a>
-			</p>
-		</card-item>
-		<card-item>
-			<img class="portrait" alt="Prof. Heng Li's portrait.">
-			<h3>Prof. Heng Li</h3>
-			<p>
-				Making software more sustainable and reliable, primarily through observability engineering.
-			</p>
-			<p><a href="mailto:heng.li@polymtl.ca">heng.li@polymtl.ca</a></p>
-		</card-item>
-		<card-item>
-			<img class="portrait" alt="Prof. Tse-Hsun (Peter) Chen's portrait.">
-			<h3>Prof. Tse-Hsun (Peter) Chen</h3>
-			<p>
-				Unifies AI and software engineering to build high-quality and trustworthy systems that scale from research prototypes to mission-critical production deployments.
-			</p>
-			<p><a href="mailto:tse-hsun.chen@concordia.ca">tse-hsun.chen@concordia.ca</a></p>
-		</card-item>
-		<card-item>
-			<img class="portrait" alt="Prof. Weiyi (Ian) Shang's portrait.">
-			<h3>Prof. Weiyi (Ian) Shang</h3>
-			<p>
-				Associate professor in the Electrical and Computer
-				Engineering department at the University of Waterloo.
-			</p>
-			<p><a href="mailto:wshang@uwaterloo.ca">wshang@uwaterloo.ca</a></p>
-		</card-item>
-	</card-grid>
-</section>
+	<section id="team">
+		<h2>Our Team</h2>
+		<card-grid>
+			<card-item>
+				<img class="portrait" alt="Hanyang Hu's portrait.">
+				<h3>Hanyang Hu</h3>
+				<p>
+					Helps enterprises refine software innovation strategy and align it with complex engineering initiatives in
+					client’s digital and AI transformation.
+				</p>
+				<p>
+					<a href="mailto:hyhu@nexspring.ca">hyhu@nexspring.ca</a>
+				</p>
+			</card-item>
+			<card-item>
+				<img class="portrait" alt="Jianchen Zhao's portrait.">
+				<h3>Jianchen Zhao</h3>
+				<p>
+					Architects high-quality, scalable engineering solutions that turn visionary research into reliable production
+					impact.
+				</p>
+				<p>
+					<a href="mailto:jian@nexspring.ca">jian@nexspring.ca</a>
+				</p>
+			</card-item>
+			<card-item>
+				<img class="portrait" alt="Prof. Heng Li's portrait.">
+				<h3>Prof. Heng Li</h3>
+				<p>
+					Making software more sustainable and reliable, primarily through observability engineering.
+				</p>
+				<p><a href="mailto:heng.li@polymtl.ca">heng.li@polymtl.ca</a></p>
+			</card-item>
+			<card-item>
+				<img class="portrait" alt="Prof. Tse-Hsun (Peter) Chen's portrait.">
+				<h3>Prof. Tse-Hsun (Peter) Chen</h3>
+				<p>
+					Unifies AI and software engineering to build high-quality and trustworthy systems that scale from research
+					prototypes to mission-critical production deployments.
+				</p>
+				<p><a href="mailto:tse-hsun.chen@concordia.ca">tse-hsun.chen@concordia.ca</a></p>
+			</card-item>
+			<card-item>
+				<img class="portrait" alt="Prof. Weiyi (Ian) Shang's portrait.">
+				<h3>Prof. Weiyi (Ian) Shang</h3>
+				<p>
+					Associate professor in the Electrical and Computer
+					Engineering department at the University of Waterloo.
+				</p>
+				<p><a href="mailto:wshang@uwaterloo.ca">wshang@uwaterloo.ca</a></p>
+			</card-item>
+		</card-grid>
+	</section>
 </box>
 
 <box>
