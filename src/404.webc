@@ -1,0 +1,14 @@
+<style webc:scoped>
+	.hero {
+		text-align: center;
+	}
+</style>
+
+<section>
+	<h2 class="hero"><span>404</span></h2>
+	<p>
+		<span>
+			Page not found.
+		</span>
+	</p>
+</section>

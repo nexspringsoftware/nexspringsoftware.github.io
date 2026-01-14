@@ -1,3 +1,4 @@
 _site
 deno.lock
 repomix-output.xml
+.nvim.lua

@@ -1,0 +1,13 @@
+<style webc:scoped>
+	:host {
+		display: block;
+		box-sizing: border-box;
+		background-color: var(--bg-color);
+		box-shadow: var(--grid-line) 0px 0px 5px;
+		overflow: auto;
+	}
+</style>
+
+<div webc:root>
+	<slot></slot>
+</div>
