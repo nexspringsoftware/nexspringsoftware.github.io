@@ -113,7 +113,8 @@
 					<h3>Prof. Heng Li</h3>
 					<p>
 						Associate professor in the Computer Engineering
-						department at Polytechnique Montréal.
+						department at Polytechnique Montréal. Makes software more sustainable and reliable,
+            primarily through observability engineering.
 					</p>
 					<p><a href="mailto:heng.li@polymtl.ca">heng.li@polymtl.ca</a></p>
 				</card-item>
@@ -122,7 +123,9 @@
 					<h3>Prof. Tse-Hsun (Peter) Chen</h3>
 					<p>
 						Associate professor in the Computer Science
-						and Software Engineering department at Concordia University.
+						and Software Engineering department at Concordia University. Unifies AI and software engineering
+            to build high-quality and trustworthy systems that scale from research
+						prototypes to mission-critical production deployments.
 					</p>
 					<p><a href="mailto:tse-hsun.chen@concordia.ca">tse-hsun.chen@concordia.ca</a></p>
 				</card-item>
