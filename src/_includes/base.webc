@@ -61,7 +61,7 @@
 				{{ navigation }}
 			</template>
 			<ul webc:else>
-				<li><a href="https://blog.nexspring.ca">blog</a></li>
+				<li><a href="https://journal.nexspring.ca">articles</a></li>
 				<li><a href="#about">about</a></li>
 				<li><a href="#team">team</a></li>
 				<li><a href="#contact">contact</a></li>
