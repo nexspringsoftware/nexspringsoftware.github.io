@@ -15,10 +15,8 @@
 		--accent: hsl(215 90% 50%);
 		--fg-accent: hsl(0 0% 100%);
 
-		--destructive: hsl(0 84% 60%);
-		--fg-destructive: hsl(0 0% 98%);
-
 		--grid-line: hsl(220 15% 90%);
+		--shadow: hsl(220 15% 90%);
 	}
 
 	@media only screen and (prefers-color-scheme: dark) {
@@ -35,42 +33,49 @@
 			--muted: hsl(220 15% 18%);
 			--fg-muted: hsl(220 10% 60%);
 
-			--accent: hsl(215 90% 70%);
+			--accent: hsl(215 50% 60%);
 			--fg-accent: hsl(0 0% 100%);
 
 			--destructive: hsl(0 62% 30%);
 			--fg-destructive: hsl(0 75% 50%);
 
 			--grid-line: hsl(220 40% 30%);
+			--shadow: hsl(220 40% 15%);
 		}
 	}
 }
 
-@layer decoration {
-	body {
-		background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+body {
+	background-color: var(--bg-color);
+
+	>header {
+		background-color: var(--bg-color);
+	}
+}
+
+
+article {
+	>header {
+		>:first-child {
+			margin-top: 4rem;
+		}
+
+		>:last-child {
+			margin-bottom: 4rem;
+		}
+
+		span {
+			background-color: var(--bg-color);
+		}
+
+		box-shadow: var(--shadow) 0px 0px 16px;
+		background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
+		linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
 		background-size: 3.333rem 3.333rem;
 		background-position: 50% 0;
-
-		:not(box) span {
-			background-color: var(--bg-color);
-		}
-
-		a {
-			color: var(--color);
-		}
-
-		>header {
-			background-color: var(--bg-color);
-			box-shadow: var(--grid-line) 0px 0px 5px;
-		}
-
-		>footer {
-			background-color: var(--bg-color);
-			border-bottom: 1px solid var(--grid-line);
-		}
+		padding: 1rem 0;
+		margin: 1rem 0;
 	}
-
 }
 
 @layer layout {
@@ -97,9 +102,9 @@
 			top: 0;
 			left: 0;
 			right: 0;
-			padding: 0 1rem;
 
 			nav {
+				padding: 0 1rem;
 				height: 100%;
 				align-self: stretch;
 				display: flex;
@@ -123,50 +128,35 @@
 			max-width: 60rem;
 			margin-left: auto;
 			margin-right: auto;
-		}
-
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			margin-top: 2rem;
+			padding: 0 1rem;
 			margin-bottom: 1rem;
 		}
 
+		h1,
+		h2 {
+			margin-top: 4rem;
+		}
+
+		h3,
+		h4 {
+			margin-top: 2rem;
+		}
+
+		h5,
+		h6,
 		p,
 		ul,
 		ol,
 		card-grid,
 		box {
 			margin-top: 1rem;
-			margin-bottom: 1rem;
 		}
 
 		>main {
 			padding-bottom: 50vh;
 			flex: 1 1 auto;
-
 		}
 	}
-
-	main,
-	article {
-
-		>header,
-		>section,
-		>footer {
-			margin: 3rem 1rem;
-		}
-
-		>box {
-			margin-top: 3rem;
-			margin-bottom: 3rem;
-		}
-	}
-
-
 }
 
 body {
@@ -200,6 +190,11 @@ h2 {
 h3 {
 	font-size: large;
 }
+
+a {
+	color: var(--color);
+}
+
 
 @media (width < 768) {
 	logo {
