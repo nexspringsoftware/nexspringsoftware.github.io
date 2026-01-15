@@ -30,10 +30,11 @@
 				border-width: 1pt;
 				border-color: var(--color);
 				color: var(--color);
-				padding: 0.5rem;
+				padding: 0.3rem;
 				text-transform: uppercase;
 				font-family: inherit;
 				font-weight: bolder;
+				font-size: inherit;
 				cursor: pointer;
 				text-decoration: unset;
 			}
