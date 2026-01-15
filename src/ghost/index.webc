@@ -28,7 +28,7 @@
 				</picture>
 			</template>
 			{{/if}}
-			<h2><a href="{{url}}">{{title}}</a></h2>
+			<h3><a href="{{url}}">{{title}}</a></h3>
 			<p>{{excerpt}}</p>
 		</card-item>
 		{{/foreach}}
