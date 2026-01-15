@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="color-scheme" content="light dark">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link webc:keep
+		href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="/styles.css">
+	<style>
+		nav ul {
+			font-size: medium;
+
+			@media (width < 768px) {
+				font-size: small;
+			}
+			margin: 0;
+			display: flex;
+			gap: 1rem;
+			list-style: none;
+
+			:last-child a {
+				background-color: var(--bg-color);
+				border-style: solid;
+				border-width: 1pt;
+				border-color: var(--color);
+				color: var(--color);
+				padding: 0.5rem;
+				text-transform: uppercase;
+				font-family: inherit;
+				font-weight: bolder;
+				cursor: pointer;
+				text-decoration: unset;
+			}
+		}
+	</style>
+
+	<style webc:keep @raw="getBundle('css')"></style>
+
+	<script webc:keep @raw="getBundle('js')"></script>
+
+	<title @text="title"></title>
+
+	<template webc:nokeep webc:if="ghost">
+		{{ ghost_head }}
+	</template>
+</head>
+
+<body :class="ghost ? '{{ body_class }}' : ''">
+	<header>
+		<nav>
+			<a href="/#top">
+				<logo @text="site"></logo>
+			</a>
+			<template webc:nokeep webc:if="ghost">
+				{{ navigation }}
+			</template>
+			<ul webc:else>
+				<li><a href="https://blog.nexspring.ca">blog</a></li>
+				<li><a href="#about">about</a></li>
+				<li><a href="#team">team</a></li>
+				<li><a href="#contact">contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main @raw="content"></main>
+
+	<footer>
+		<span class="copy">Copyright &copy; 2026 NexSpring Software Inc.</span>
+	</footer>
+
+	<template webc:nokeep webc:if="ghost">
+		{{ ghost_foot }}
+	</template>
+</body>
+
+</html>

@@ -1,3 +1,5 @@
 _site
+_theme
 deno.lock
 .nvim.lua
+.env

@@ -1,5 +1,5 @@
 <div webc:root>
-	<div class="header">
+	<div class="decoration">
 		<i class="corner"></i>
 	</div>
 	<slot></slot>
@@ -7,7 +7,9 @@
 
 <style webc:scoped>
 	:host {
-		.header {
+		border-color: var(--grid-line);
+
+		.decoration {
 			&::before {
 				counter-increment: card;
 				content: counter(card);
@@ -18,15 +20,17 @@
 			justify-content: space-between;
 		}
 
-		border-color: var(--grid-line);
-	}
+		:nth-child(2) {
+			margin-top: 0;
+		}
 
-	i.corner {
-		width: .5rem;
-		height: .5rem;
-		border-top: solid;
-		border-right: solid;
-		border-width: 2px;
-		border-color: var(--color);
+		i.corner {
+			width: .5rem;
+			height: .5rem;
+			border-top: solid;
+			border-right: solid;
+			border-width: 2px;
+			border-color: var(--color);
+		}
 	}
 </style>
