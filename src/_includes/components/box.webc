@@ -3,8 +3,10 @@
 		display: block;
 		box-sizing: border-box;
 		background-color: var(--bg-color);
-		box-shadow: var(--grid-line) 0px 0px 5px;
+		box-shadow: var(--grid-line) 0px 0px 16px;
 		overflow: auto;
+
+		padding: 1rem;
 	}
 </style>
 

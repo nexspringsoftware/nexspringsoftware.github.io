@@ -1,4 +1,6 @@
 _site
+_theme
 deno.lock
 repomix-output.xml
 .nvim.lua
+.env

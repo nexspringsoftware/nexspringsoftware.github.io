@@ -1,0 +1,24 @@
+<style webc:scoped>
+	:host {
+		font-size: large;
+		font-weight: bolder;
+		display: inline-flex;
+		align-items: center;
+		color: var(--color);
+		text-decoration: none;
+		gap: 0.5rem;
+
+		@media (width < 768px) {
+			font-size: small;
+		}
+	}
+
+	:host::before {
+		content: "";
+		background-color: var(--accent);
+		width: 0.5rem;
+		height: 0.5rem;
+		flex: 1 0 auto;
+	}
+</style>
+<slot></slot>
