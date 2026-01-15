@@ -46,6 +46,5 @@ jobs:
       - name: Deploy to Ghost
         uses: TryGhost/action-deploy-theme@v1
         with:
-          working-directory: _theme
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
