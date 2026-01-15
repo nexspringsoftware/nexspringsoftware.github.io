@@ -54,30 +54,6 @@ body {
 }
 
 
-article {
-	>header {
-		>:first-child {
-			margin-top: 4rem;
-		}
-
-		>:last-child {
-			margin-bottom: 4rem;
-		}
-
-		span {
-			background-color: var(--bg-color);
-		}
-
-		box-shadow: var(--shadow) 0px 0px 16px;
-		background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
-		linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-		background-size: 3.333rem 3.333rem;
-		background-position: 50% 0;
-		padding: 1rem 0;
-		margin: 1rem 0;
-	}
-}
-
 @layer layout {
 	:root {
 		--header-height: 4rem;
@@ -193,11 +169,4 @@ h3 {
 
 a {
 	color: var(--color);
-}
-
-
-@media (width < 768) {
-	logo {
-		font-size: x-small;
-	}
 }
