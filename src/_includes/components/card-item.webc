@@ -32,5 +32,19 @@
 			border-width: 2px;
 			border-color: var(--color);
 		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		ol,
+		card-grid,
+		figure {
+			padding: 0;
+		}
 	}
 </style>

@@ -17,16 +17,12 @@
 		nav ul {
 			font-size: medium;
 
-			@media (width < 768px) {
-				font-size: small;
-			}
-
 			margin: 0;
 			display: flex;
 			gap: 1rem;
 			list-style: none;
 
-			:last-child a {
+			>:last-child a {
 				background-color: var(--bg-color);
 				border-style: solid;
 				border-width: 1pt;
@@ -66,15 +62,30 @@
 				margin: 1rem 0;
 			}
 		}
+
+		@media (width < 768px) {
+			nav ul {
+				font-size: small;
+			}
+		}
 	</style>
 
 	<style webc:keep @raw="getBundle('css')"></style>
 
 	<style webc:keep webc:if="ghost" webc:raw>
-		:root{
-			--accent: {{@site.accent_color}}
+		:root {
+			--accent: {
+					{
+					@site.accent_color
+				}
+			}
+
 			@media only screen and (prefers-color-scheme: dark) {
-				--accent: {{@custom.accent_dark}}
+				--accent: {
+						{
+						@custom.accent_dark
+					}
+				}
 			}
 		}
 	</style>
