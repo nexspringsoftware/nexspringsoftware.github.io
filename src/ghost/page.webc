@@ -1,0 +1,35 @@
+<style webc:scoped>
+	:not(header) {
+
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		ol {
+			max-width: 48rem;
+		}
+	}
+</style>
+
+{{#post}}
+<article class="{{post_class}}">
+	{{#match @page.show_title_and_feature_image}}
+	<ghost-feature-image></ghost-feature-image>
+	<header>
+		<h1><span>{{ title }}</span></h1>
+
+		<p>{{#foreach authors}}<span>{{name}}</span>{{/foreach}}</p>
+
+		{{#if custom_excerpt}}
+		<p><span>{{custom_excerpt}}</span></p>
+		{{/if}}
+	</header>
+	{{/match}}
+
+	{{content}}
+
+</article>
+{{/post}}
