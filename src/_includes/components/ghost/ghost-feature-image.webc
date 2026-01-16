@@ -27,7 +27,7 @@
 		</picture>
 		{{#if feature_image_caption}}
 		<figcaption>{{feature_image_caption}}</figcaption>
-		{{/fi}}
+		{{/if}}
 	</figure>
 	{{/if}}
 </template>
