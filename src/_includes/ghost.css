@@ -1,0 +1,25 @@
+body {
+	font-family: var(--gh-font-body, var(--));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--gh-font-heading);
+}
+
+figcaption {
+	text-align: center;
+}
+
+.kg-width-wide {
+	width: 80rem;
+}
+
+.kg-width-full {
+	width: 100vw;
+	padding: 0;
+}
