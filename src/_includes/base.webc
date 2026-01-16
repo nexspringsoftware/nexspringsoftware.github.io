@@ -12,6 +12,7 @@
 		href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
 		rel="stylesheet">
 	<link rel="stylesheet" href="/styles.css">
+	<link webc:if="ghost" rel="stylesheet" href="/ghost.css">
 	<style>
 		nav ul {
 			font-size: medium;
@@ -68,6 +69,15 @@
 	</style>
 
 	<style webc:keep @raw="getBundle('css')"></style>
+
+	<style webc:keep webc:if="ghost" webc:raw>
+		:root{
+			--accent: {{@site.accent_color}}
+			@media only screen and (prefers-color-scheme: dark) {
+				--accent: {{@custom.accent_dark}}
+			}
+		}
+	</style>
 
 	<script webc:keep @raw="getBundle('js')"></script>
 

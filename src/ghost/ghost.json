@@ -3,5 +3,5 @@
 	"permalink": "'/' + page.filePathStem + '.hbs'",
 	"ghost": true,
 	"title": "{{meta_title}}",
-	"site": "NexSpring Journal"
+	"site": "NexSpring Software"
 }

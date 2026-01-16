@@ -43,16 +43,8 @@
 			--shadow: hsl(220 40% 15%);
 		}
 	}
+
 }
-
-body {
-	background-color: var(--bg-color);
-
-	>header {
-		background-color: var(--bg-color);
-	}
-}
-
 
 @layer layout {
 	:root {
@@ -100,22 +92,22 @@ body {
 		ul,
 		ol,
 		card-grid,
-		box {
+		figure {
 			max-width: 60rem;
 			margin-left: auto;
 			margin-right: auto;
-			padding: 0 1rem;
 			margin-bottom: 1rem;
+			padding: 0 1rem;
 		}
 
 		h1,
 		h2 {
-			margin-top: 4rem;
+			margin-top: 6rem;
 		}
 
 		h3,
 		h4 {
-			margin-top: 2rem;
+			margin-top: 3rem;
 		}
 
 		h5,
@@ -124,7 +116,7 @@ body {
 		ul,
 		ol,
 		card-grid,
-		box {
+		figure {
 			margin-top: 1rem;
 		}
 
@@ -132,41 +124,60 @@ body {
 			padding-bottom: 50vh;
 			flex: 1 1 auto;
 		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
 	}
 }
 
-body {
-	font-family: 'JetBrains Mono', monospace;
-	background-color: var(--bg-color);
-	color: var(--color);
-}
+@layer base {
+	:root {
+		--font-family: 'JetBrains Mono', monospace;
+	}
 
-p {
-	text-align: left;
-}
+	body {
+		font-family: var(--font-family);
+		background-color: var(--bg-color);
+		color: var(--color);
 
-.copy {
-	font-size: smaller;
-	color: var(--fg-muted);
-}
+		>header {
+			background-color: var(--bg-color);
+		}
+	}
 
-logo {
-	font-size: large;
-}
+	p {
+		text-align: left;
+	}
 
-h1 {
-	font-size: 32pt;
-	text-transform: capitalize;
-}
+	.copy {
+		font-size: smaller;
+		color: var(--fg-muted);
+	}
 
-h2 {
-	font-size: x-large;
-}
+	logo {
+		font-size: large;
+	}
 
-h3 {
-	font-size: large;
-}
+	h1 {
+		font-size: 32pt;
+		text-transform: capitalize;
+	}
 
-a {
-	color: var(--color);
+	h2 {
+		font-size: x-large;
+	}
+
+	h3 {
+		font-size: large;
+	}
+
+	hr {
+		margin: 6rem 0;
+	}
+
+	a {
+		color: var(--color);
+	}
 }

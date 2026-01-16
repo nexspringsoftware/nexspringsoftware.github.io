@@ -16,8 +16,8 @@
 
 {{#post}}
 <article class="{{post_class}}">
+	{{#match @page.show_title_and_feature_image}}
 	<ghost-feature-image></ghost-feature-image>
-
 	<header>
 		<h1><span>{{ title }}</span></h1>
 
@@ -26,19 +26,10 @@
 		{{#if custom_excerpt}}
 		<p><span>{{custom_excerpt}}</span></p>
 		{{/if}}
-
-		<ghost-feature-image></ghost-feature-image>
-
 	</header>
+	{{/match}}
 
 	{{content}}
 
-	<footer>
-		{{#if comments}}
-		<section>
-			{{comments}}
-		</section>
-		{{/if}}
-	</footer>
 </article>
 {{/post}}
