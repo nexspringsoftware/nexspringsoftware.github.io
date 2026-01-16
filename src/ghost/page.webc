@@ -1,18 +1,6 @@
 <style webc:scoped>
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	ul,
-	ol,
-	card-grid,
-	figure {
-		&:not(header &) {
-			max-width: 48rem;
-		}
+	article>*:not(header) {
+		--content-width: 48rem;
 	}
 </style>
 

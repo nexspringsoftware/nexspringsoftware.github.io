@@ -33,6 +33,7 @@ figcaption {
 }
 
 .kg-card {
+	max-width: var(--content-width);
 	margin: 3rem auto;
 }
 
