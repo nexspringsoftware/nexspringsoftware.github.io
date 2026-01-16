@@ -49,6 +49,7 @@
 @layer layout {
 	:root {
 		--header-height: 4rem;
+		--content-width: 60rem;
 	}
 
 	html {
@@ -94,7 +95,7 @@
 		figure,
 		card-grid,
 		figure {
-			max-width: 60rem;
+			max-width: var(--content-width);
 			margin-left: auto;
 			margin-right: auto;
 			margin-bottom: 1rem;

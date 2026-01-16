@@ -1,16 +1,6 @@
 <style webc:scoped>
-	:not(header) {
-
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		p,
-		ul,
-		ol {
-			max-width: 48rem;
-		}
+	article>*:not(header) {
+		--content-width: 48rem;
 	}
 </style>
 

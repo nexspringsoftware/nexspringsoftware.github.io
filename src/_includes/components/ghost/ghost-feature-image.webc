@@ -1,3 +1,11 @@
+<style webc:scoped>
+	figure {
+		max-width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+</style>
+
 <template webc:nokeep webc:raw>
 	{{#if feature_image}}
 	<figure>
@@ -17,6 +25,9 @@
 				alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" class="gh-card-image" {{^if
 				@first}}loading="lazy" {{/if}}>
 		</picture>
+		{{#if feature_image_caption}}
+		<figcaption>{{feature_image_caption}}</figcaption>
+		{{/fi}}
 	</figure>
 	{{/if}}
 </template>
