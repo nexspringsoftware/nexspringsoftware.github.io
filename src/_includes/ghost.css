@@ -24,11 +24,11 @@ figcaption {
 }
 
 .kg-width-wide {
-	width: 80rem;
+	max-width: 80rem;
 }
 
 .kg-width-full {
-	width: 100vw;
+	max-width: 100vw;
 	padding: 0;
 }
 
