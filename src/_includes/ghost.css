@@ -1,3 +1,11 @@
+:root {
+	--accent: var(--ghost-accent-color);
+
+	@media only screen and (prefers-color-scheme: dark) {
+		--accent: color-mix(in hsl, gray, var(--ghost-accent-color));
+	}
+}
+
 body {
 	font-family: var(--gh-font-body, var(--));
 }

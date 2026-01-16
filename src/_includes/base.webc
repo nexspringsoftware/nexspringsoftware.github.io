@@ -71,25 +71,6 @@
 	</style>
 
 	<style webc:keep @raw="getBundle('css')"></style>
-
-	<style webc:keep webc:if="ghost" webc:raw>
-		:root {
-			--accent: {
-					{
-					@site.accent_color
-				}
-			}
-
-			@media only screen and (prefers-color-scheme: dark) {
-				--accent: {
-						{
-						@custom.accent_dark
-					}
-				}
-			}
-		}
-	</style>
-
 	<script webc:keep @raw="getBundle('js')"></script>
 
 	<title @text="title"></title>
