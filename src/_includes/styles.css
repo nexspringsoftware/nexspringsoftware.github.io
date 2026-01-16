@@ -160,7 +160,7 @@
 	}
 
 	.copy {
-		font-size: smaller;
+		font-size: small;
 		color: var(--fg-muted);
 	}
 
