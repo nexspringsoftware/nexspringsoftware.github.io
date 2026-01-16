@@ -19,16 +19,22 @@
 				"width": 600
 			},
 			"l": {
-				"width": 1000
+				"width": 1200
+			},
+			"xxl": {
+				"width": 2000
 			},
 			"xl": {
+				"width": 1200
+			},
+			"xxl": {
 				"width": 2000
 			}
 		},
 		"custom": {
 			"accent_dark": {
 				"type": "color",
-				"default": "#123456",
+				"default": "#123456"
 			}
 		}
 	}

@@ -25,7 +25,7 @@ figcaption {
 }
 
 .kg-card {
-	margin: 1rem auto;
+	margin: 3rem auto;
 }
 
 .kg-width-full:not(.kg-card-hascaption):has(+.kg-width-full) {

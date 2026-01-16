@@ -5,7 +5,6 @@ export default function (config) {
   config.addPlugin(pluginWebc, {
     components: [
       "src/_includes/components/**/*.webc",
-      "npm:@11ty/is-land/*.webc",
     ],
   });
 	config.ignores.add("src/ghost/**");
