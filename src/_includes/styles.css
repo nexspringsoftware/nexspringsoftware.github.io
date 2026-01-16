@@ -91,6 +91,7 @@
 		p,
 		ul,
 		ol,
+		figure,
 		card-grid,
 		figure {
 			max-width: 60rem;
@@ -115,9 +116,15 @@
 		p,
 		ul,
 		ol,
+		figure,
 		card-grid,
 		figure {
 			margin-top: 1rem;
+		}
+
+		ul,
+		ol {
+			padding: 0;
 		}
 
 		>main {

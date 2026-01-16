@@ -1,6 +1,6 @@
 <header>
-	<h1><span>NexSpring Software Journal</span></h1>
-	<p><span>Bite sized software innovation.</span></p>
+	<h1><span>{{@site.title}}</span></h1>
+	<p><span>{{@site.description}}</span></p>
 </header>
 
 <h2>Articles</h2>
