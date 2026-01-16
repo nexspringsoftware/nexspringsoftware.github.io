@@ -30,12 +30,6 @@
 			"xxl": {
 				"width": 2000
 			}
-		},
-		"custom": {
-			"accent_dark": {
-				"type": "color",
-				"default": "#123456"
-			}
 		}
 	}
 }
