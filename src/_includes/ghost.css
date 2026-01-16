@@ -23,18 +23,18 @@ figcaption {
 	text-align: center;
 }
 
-.kg-width-wide {
-	max-width: 80rem;
-}
-
-.kg-width-full {
-	max-width: 100vw;
-	padding: 0;
-}
-
 .kg-card {
 	max-width: var(--content-width);
 	margin: 3rem auto;
+}
+
+.kg-width-wide {
+	--content-width: 80rem;
+}
+
+.kg-width-full {
+	--content-width: 100vw;
+	padding: 0;
 }
 
 .kg-width-full:not(.kg-card-hascaption):has(+.kg-width-full) {

@@ -1,4 +1,4 @@
-<style webc:scoped>
+<style>
 	article>*:not(header) {
 		--content-width: 48rem;
 	}
@@ -6,8 +6,6 @@
 
 {{#post}}
 <article class="{{post_class}}">
-	<ghost-feature-image></ghost-feature-image>
-
 	<header>
 		<h1><span>{{ title }}</span></h1>
 
