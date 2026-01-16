@@ -173,6 +173,10 @@
 		font-size: large;
 	}
 
+	hr {
+		margin: 6rem 0;
+	}
+
 	a {
 		color: var(--color);
 	}

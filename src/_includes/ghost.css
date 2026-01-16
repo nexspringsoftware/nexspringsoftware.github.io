@@ -23,3 +23,15 @@ figcaption {
 	width: 100vw;
 	padding: 0;
 }
+
+.kg-card {
+	margin: 1rem auto;
+}
+
+.kg-width-full:not(.kg-card-hascaption):has(+.kg-width-full) {
+	margin-bottom: 0;
+}
+
+.kg-width-full:not(.kg-card-hascaption)+.kg-width-full {
+	margin-top: 0;
+}
