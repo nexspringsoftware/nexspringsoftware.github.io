@@ -1,0 +1,78 @@
+<style webc:scoped>
+	menu {
+		font-size: medium;
+		margin: 0;
+		display: flex;
+		gap: 1rem;
+		list-style: none;
+
+		>:last-child a {
+			background-color: var(--bg-color);
+			border-style: solid;
+			border-width: 1pt;
+			border-color: var(--color);
+			color: var(--color);
+			padding: 0.3rem;
+			text-transform: uppercase;
+			font-family: inherit;
+			font-weight: bolder;
+			font-size: inherit;
+			cursor: pointer;
+			text-decoration: unset;
+		}
+	}
+
+	input[type="checkbox"],
+	label {
+		display: none;
+	}
+
+	@media (width <=768px) {
+		label {
+			display: block;
+		}
+
+		menu {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			background-color: var(--bg-color);
+			padding: 1rem;
+			padding-top: var(--header-height);
+			flex-direction: column;
+			align-items: end;
+			transform: translateY(0%);
+			transition: transform .5s ease;
+			z-index: -1;
+			transform: translateY(0);
+		}
+
+		input[type="checkbox"]:not(:checked)+menu {
+			transform: translateY(-100%);
+		}
+
+		.notransition {
+			transition: none !important;
+		}
+		
+	}
+</style>
+
+<div webc:root>
+	<label for="nav-hamburger" tabindex="0">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M3 6C3 5.44772 3.44772 5 4 5H20C20.5523 5 21 5.44772 21 6C21 6.55228 20.5523 7 20 7H4C3.44772 7 3 6.55228 3 6Z"
+				fill="currentColor" />
+			<path
+				d="M3 18C3 17.4477 3.44772 17 4 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H4C3.44772 19 3 18.5523 3 18Z"
+				fill="currentColor" />
+			<path
+				d="M3 12C3 11.4477 3.44772 11 4 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H10.2625L7.61456 15.6479L4.96662 13H4C3.44772 13 3 12.5523 3 12Z"
+				fill="currentColor" />
+		</svg>
+	</label>
+	<input id="nav-hamburger" type="checkbox"></input>
+	<slot></slot>
+</div>

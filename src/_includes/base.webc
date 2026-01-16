@@ -14,28 +14,8 @@
 	<link rel="stylesheet" href="/styles.css">
 	<link webc:if="ghost" rel="stylesheet" href="/ghost.css">
 	<style>
-		nav ul {
-			font-size: medium;
-
-			margin: 0;
-			display: flex;
-			gap: 1rem;
-			list-style: none;
-
-			>:last-child a {
-				background-color: var(--bg-color);
-				border-style: solid;
-				border-width: 1pt;
-				border-color: var(--color);
-				color: var(--color);
-				padding: 0.3rem;
-				text-transform: uppercase;
-				font-family: inherit;
-				font-weight: bolder;
-				font-size: inherit;
-				cursor: pointer;
-				text-decoration: unset;
-			}
+		body>header {
+			box-shadow: var(--shadow) 0px 0px 16px;
 		}
 
 		main,
@@ -60,15 +40,31 @@
 				background-position: 50% 0;
 				padding: 1rem 0;
 				margin: 1rem 0;
+				margin-bottom: 6rem;
 			}
 		}
 
-		@media (width < 768px) {
-			nav ul {
-				font-size: small;
-			}
+		nav {
+			background-color: var(--bg-color);
+		}
+
+		.notransition * {
+			animation: none !important;
+			transition: none !important;
 		}
 	</style>
+
+	<!-- prevent transition during resize -->
+	<script type="module">
+		let resizeTimer;
+		window.addEventListener("resize", () => {
+			document.body.classList.add("notransition");
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(() => {
+				document.body.classList.remove("notransition");
+			}, 100);
+		});
+	</script>
 
 	<style webc:keep @raw="getBundle('css')"></style>
 	<script webc:keep @raw="getBundle('js')"></script>
@@ -86,15 +82,17 @@
 			<a href="/#top">
 				<logo @text="site"></logo>
 			</a>
-			<template webc:nokeep webc:if="ghost">
-				{{ navigation }}
-			</template>
-			<ul webc:else>
-				<li><a href="https://journal.nexspring.ca">articles</a></li>
-				<li><a href="#about">about</a></li>
-				<li><a href="#team">team</a></li>
-				<li><a href="#contact">contact</a></li>
-			</ul>
+			<hamburger>
+				<template webc:nokeep webc:if="ghost">
+					{{ navigation }}
+				</template>
+				<menu webc:else>
+					<li><a href="https://journal.nexspring.ca">articles</a></li>
+					<li><a href="#about">about</a></li>
+					<li><a href="#team">team</a></li>
+					<li><a href="#contact">contact</a></li>
+				</menu>
+			</hamburger>
 		</nav>
 	</header>
 

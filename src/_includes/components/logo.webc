@@ -7,10 +7,6 @@
 		color: var(--color);
 		text-decoration: none;
 		gap: 0.5rem;
-
-		@media (width < 768px) {
-			font-size: small;
-		}
 	}
 
 	:host::before {
