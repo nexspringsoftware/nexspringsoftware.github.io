@@ -1,4 +1,8 @@
 <style webc:scoped>
+	:host {
+		display: block;
+	}
+
 	figure {
 		margin-top: 0;
 		margin-bottom: 0;
