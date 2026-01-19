@@ -136,6 +136,12 @@
 		img {
 			max-width: 100%;
 			height: auto;
+			border-radius: 16px;
+			corner-shape: squircle;
+		}
+
+		figure img {
+			width: 100%;
 		}
 	}
 }
