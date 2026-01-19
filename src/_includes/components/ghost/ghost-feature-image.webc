@@ -8,6 +8,11 @@
 		margin-bottom: 0;
 		padding: 0;
 	}
+	
+	figure img {
+		width: 100%;
+		height: auto;
+	}
 </style>
 
 {{#if feature_image}}

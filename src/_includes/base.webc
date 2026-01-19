@@ -12,11 +12,16 @@
 	<link webc:keep
 		href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
 		rel="stylesheet">
+	<link webc:keep
+		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+		rel="stylesheet">
+
 	<link rel="stylesheet" href="/styles.css">
 	<link webc:if="ghost" rel="stylesheet" href="/ghost.css">
 	<style>
 		body>header {
 			box-shadow: var(--shadow) 0px 0px 16px;
+			font-family: var(--font-head);
 		}
 
 		main,
@@ -83,7 +88,7 @@
 			<a href="/#top">
 				<logo @text="site"></logo>
 			</a>
-			<hamburger>
+			<nav-hamburger>
 				<template webc:nokeep webc:if="ghost">
 					{{ navigation }}
 				</template>
@@ -93,7 +98,7 @@
 					<li><a href="#team">team</a></li>
 					<li><a href="#contact">contact</a></li>
 				</menu>
-			</hamburger>
+			</nav-hamburger>
 		</nav>
 	</header>
 
