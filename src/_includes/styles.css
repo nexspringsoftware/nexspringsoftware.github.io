@@ -149,7 +149,7 @@
 @layer base {
 	:root {
 		--font-head: 'JetBrains Mono', monospaced;
-		--font-body: 'IBM Plex Serif', Georgia, serif;
+		--font-body: 'IBM Plex Sans', Georgia, serif;
 	}
 
 	body {
