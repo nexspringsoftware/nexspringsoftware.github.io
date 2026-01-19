@@ -11,7 +11,7 @@
 
 		<p>{{#foreach authors}}<span>{{name}}</span>{{/foreach}}</p>
 
-		<p><time datetime='{{date published_at format=""YYY-MM-DD"}}'>{{date published_at format="DD MMMM YYYY"}}</time>, {{reading_time}}</p>
+		<p><time datetime='{{date published_at format="YYY-MM-DD"}}'>{{date published_at format="DD MMMM YYYY"}}</time>, {{reading_time}}</p>
 
 		{{#if custom_excerpt}}
 		<p><span>{{custom_excerpt}}</span></p>
