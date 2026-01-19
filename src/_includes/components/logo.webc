@@ -1,5 +1,6 @@
 <style webc:scoped>
 	:host {
+		font-family: var(--font-head);
 		font-size: large;
 		font-weight: bolder;
 		display: inline-flex;

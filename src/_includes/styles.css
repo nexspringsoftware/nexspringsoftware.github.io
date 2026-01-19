@@ -148,11 +148,12 @@
 
 @layer base {
 	:root {
-		--font-family: 'JetBrains Mono', monospace;
+		--font-head: 'JetBrains Mono', monospaced;
+		--font-body: 'IBM Plex Serif', Georgia, serif;
 	}
 
 	body {
-		font-family: var(--font-family);
+		font-family: var(--font-body);
 		background-color: var(--bg-color);
 		color: var(--color);
 
@@ -162,7 +163,7 @@
 	}
 
 	p {
-		text-align: left;
+		text-align: justify;
 	}
 
 	.copy {
@@ -172,6 +173,15 @@
 
 	logo {
 		font-size: large;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-head);
 	}
 
 	h1 {
