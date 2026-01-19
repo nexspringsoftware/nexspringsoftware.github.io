@@ -157,9 +157,13 @@
 		background-color: var(--bg-color);
 		color: var(--color);
 
-		>header {
+		>header>* {
 			background-color: var(--bg-color);
 		}
+	}
+
+	header>* {
+		font-family: var(--font-head);
 	}
 
 	p {
