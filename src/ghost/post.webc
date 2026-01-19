@@ -2,6 +2,10 @@
 	article>*:not(header) {
 		--content-width: 48rem;
 	}
+
+	article>header>*:not(.excerpt) {
+		font-family: var(--font-head);
+	}
 </style>
 
 {{#post}}
@@ -11,10 +15,15 @@
 
 		<p>{{#foreach authors}}<span>{{name}}</span>{{/foreach}}</p>
 
-		<p><time datetime='{{date published_at format="YYY-MM-DD"}}'>{{date published_at format="DD MMMM YYYY"}}</time>, {{reading_time}}</p>
+		<template webc:nokeep webc:raw>
+			<p>
+				<time datetime='{{date published_at format="YYYY-MM-DD"}}'>{{date published_at format="DD MMMM YYYY"}}</time>,
+				{{reading_time}}.
+			</p>
+		</template>
 
 		{{#if custom_excerpt}}
-		<p><span>{{custom_excerpt}}</span></p>
+		<p class="excerpt"><span>{{custom_excerpt}}</span></p>
 		{{/if}}
 
 		<ghost-feature-image></ghost-feature-image>
