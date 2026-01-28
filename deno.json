@@ -1,11 +1,6 @@
 {
   "imports": {
     "@11ty/eleventy": "npm:@11ty/eleventy@^3.1.2",
-    "@11ty/eleventy-plugin-handlebars": "npm:@11ty/eleventy-plugin-handlebars@^1.0.0",
     "@11ty/eleventy-plugin-webc": "npm:@11ty/eleventy-plugin-webc@^0.12.0-beta.7",
-    "@11ty/is-land": "npm:@11ty/is-land@^5.0.1",
-    "@std/dotenv": "jsr:@std/dotenv@^0.225.6",
-    "@tryghost/content-api": "npm:@tryghost/content-api@^1.12.3",
-    "html-minifier-next": "npm:html-minifier-next@^4.17.1"
   }
 }
