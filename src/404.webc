@@ -1,14 +1,18 @@
+---
+title: NexSpring Software 404
+permalink: 404.html
+---
 <style>
-	h1,
-	p {
-		text-align: center;
-		font-family: var(--font-head);
-	}
+  h1,
+  p {
+    text-align: center;
+    font-family: var(--font-head);
+  }
 </style>
 
 <article>
-	<h1>404</h1>
-	<p>
-		Page not found.
-	</p>
+  <h1>404</h1>
+  <p>
+    Page not found.
+  </p>
 </article>

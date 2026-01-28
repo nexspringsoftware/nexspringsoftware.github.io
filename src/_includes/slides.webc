@@ -1,0 +1,12 @@
+---
+layout: base
+---
+<style>
+:root main section {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+</style>
+<main @raw="content"></main>

@@ -1,55 +1,7 @@
-@layer color {
+@layer base {
 	:root {
-		--bg-color: hsl(0 0% 100%);
-		--color: hsl(220 20% 10%);
-
-		--primary: hsl(220 60% 15%);
-		--fg-primary: hsl(0 0% 98%);
-
-		--secondary: hsl(220 15% 92%);
-		--fg-secondary: hsl(220 20% 10%);
-
-		--muted: hsl(220 10% 94%);
-		--fg-muted: hsl(220 10% 45%);
-
-		--accent: hsl(215 90% 50%);
-		--fg-accent: hsl(0 0% 100%);
-
-		--grid-line: hsl(220 15% 90%);
-		--shadow: hsl(220 15% 90%);
-	}
-
-	@media only screen and (prefers-color-scheme: dark) {
-		:root {
-			--bg-color: hsl(220 40% 20%);
-			--color: hsl(0 0% 95%);
-
-			--primary: hsl(0 0% 95%);
-			--fg-primary: hsl(220 20% 8%);
-
-			--secondary: hsl(220 15% 18%);
-			--fg-secondary: hsl(0 0% 95%);
-
-			--muted: hsl(220 15% 18%);
-			--fg-muted: hsl(220 10% 60%);
-
-			--accent: color-mix(in hsl, hsl(215 90% 50%), gray);
-			--fg-accent: hsl(0 0% 100%);
-
-			--destructive: hsl(0 62% 30%);
-			--fg-destructive: hsl(0 75% 50%);
-
-			--grid-line: hsl(220 40% 30%);
-			--shadow: hsl(220 40% 15%);
-		}
-	}
-
-}
-
-@layer layout {
-	:root {
-		--header-height: 4rem;
-		--content-width: 60rem;
+		--font-head: 'JetBrains Mono', monospaced;
+		--font-body: 'IBM Plex Sans', Georgia, serif;
 	}
 
 	html {
@@ -59,110 +11,77 @@
 
 	body {
 		margin: 0;
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-		box-sizing: border-box;
-		padding-top: var(--header-height);
+		padding: 0;
 
-		>header {
-			height: var(--header-height);
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-
-			nav {
-				padding: 0 1rem;
-				height: 100%;
-				align-self: stretch;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-			}
-		}
-
-		nav,
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		p,
-		ul,
-		ol,
-		figure,
-		card-grid,
-		figure {
-			max-width: var(--content-width);
-			margin-left: auto;
-			margin-right: auto;
-			margin-bottom: 1rem;
-			padding: 0 1rem;
-		}
-
-		h1,
-		h2 {
-			margin-top: 6rem;
-		}
-
-		h3,
-		h4 {
-			margin-top: 3rem;
-		}
-
-		h5,
-		h6,
-		p,
-		ul,
-		ol,
-		figure,
-		card-grid,
-		figure {
-			margin-top: 1rem;
-		}
-
-		ul,
-		ol {
-			padding: 0;
-		}
-
-		>main {
-			padding-bottom: 50vh;
-			flex: 1 1 auto;
-		}
-
-		img {
-			max-width: 100%;
-			height: auto;
-			border-radius: 16px;
-			corner-shape: squircle;
-		}
-
-		figure img {
-			width: 100%;
-		}
-	}
-}
-
-@layer base {
-	:root {
-		--font-head: 'JetBrains Mono', monospaced;
-		--font-body: 'IBM Plex Sans', Georgia, serif;
-	}
-
-	body {
 		font-family: var(--font-body);
+
 		background-color: var(--bg-color);
 		color: var(--color);
-
-		>header>* {
-			background-color: var(--bg-color);
-		}
 	}
 
-	header>* {
+	nav,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	ul,
+	ol,
+	figure,
+	card-grid,
+	figure {
+		max-width: var(--content-width);
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 1rem;
+		padding: 0 1rem;
+	}
+
+	h1,
+	h2 {
+		margin-top: 6rem;
+	}
+
+	h3,
+	h4 {
+		margin-top: 3rem;
+	}
+
+	h5,
+	h6,
+	p,
+	ul,
+	ol,
+	figure,
+	card-grid,
+	figure {
+		margin-top: 1rem;
+	}
+
+	ul,
+	ol {
+		padding: 0;
+	}
+
+	body>main {
+		padding-bottom: 50vh;
+		flex: 1 1 auto;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 16px;
+		corner-shape: squircle;
+	}
+
+	figure img {
+		width: 100%;
+	}
+
+	header * {
 		font-family: var(--font-head);
 	}
 

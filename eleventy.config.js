@@ -3,26 +3,15 @@ import { minify } from "html-minifier-next";
 
 export default function (config) {
   config.setInputDirectory("src");
+  config.ignores.add("src/ghost/**");
+
   config.addPlugin(WebcPlugin, {
     components: [
       "src/_includes/components/**/*.webc",
     ],
   });
-  config.addTransform("htmlmin", async function (content) {
-    const name = this.page.outputPath || "";
-    if (name.endsWith(".html") || name.endsWith(".hbs")) {
-      content = await minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-        minifyCSS: true,
-        minifyJS: true,
-        ignoreCustomFragments: [
-          /{{[{]?(.*?)[}]?}}/g,
-        ],
-      });
-    }
-    return content;
-  });
-  config.ignores.add("src/ghost/**");
+
+  config.addGlobalData("layout", "default");
+  config.addGlobalData("title", "NexSpring Software");
+  config.addGlobalData("site", "NexSpring Software");
 }
