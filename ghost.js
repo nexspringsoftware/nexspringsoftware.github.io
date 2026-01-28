@@ -1,5 +1,4 @@
 import WebcPlugin from "@11ty/eleventy-plugin-webc";
-import { minify } from "html-minifier-next";
 
 export default function (config) {
   config.setInputDirectory("src/ghost");
