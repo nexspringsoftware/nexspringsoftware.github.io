@@ -1,7 +1,0 @@
-{
-	"layout": "base",
-	"permalink": "'/' + page.filePathStem + '.hbs'",
-	"ghost": true,
-	"title": "{{meta_title}}",
-	"site": "NexSpring Software Journal"
-}

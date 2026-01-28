@@ -1,0 +1,117 @@
+---
+layout: base
+---
+
+<style>
+	:root {
+		--header-height: 4rem;
+	}
+
+	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		box-sizing: border-box;
+		padding-top: var(--header-height);
+	}
+
+
+	body>header {
+		box-shadow: var(--shadow) 0px 0px 16px;
+		font-family: var(--font-head);
+		height: var(--header-height);
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
+	body>header nav {
+		padding: 0 1rem;
+		height: 100%;
+		align-self: stretch;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	body>header>* {
+		background-color: var(--bg-color);
+	}
+
+	main,
+	article {
+		>header {
+			>:first-child {
+				margin-top: 4rem;
+			}
+
+			>:last-child {
+				margin-bottom: 4rem;
+			}
+
+			span {
+				background-color: var(--bg-color);
+			}
+
+			box-shadow: var(--shadow) 0px 0px 16px;
+			background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
+			linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+			background-size: 3.333rem 3.333rem;
+			background-position: 50% 0;
+			padding: 1rem 0;
+			margin: 1rem 0;
+			margin-bottom: 6rem;
+		}
+	}
+
+	nav {
+		background-color: var(--bg-color);
+	}
+
+	.notransition * {
+		animation: none !important;
+		transition: none !important;
+	}
+</style>
+
+<!-- prevent transition during resize -->
+<script type="module">
+	let resizeTimer;
+	window.addEventListener("resize", () => {
+		document.body.classList.add("notransition");
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(() => {
+			document.body.classList.remove("notransition");
+		}, 100);
+	});
+</script>
+
+<header>
+	<nav>
+		<a href="/#top">
+			<logo @text="site"></logo>
+		</a>
+		<nav-hamburger>
+			<template webc:nokeep webc:if="ghost">
+				{{ navigation }}
+			</template>
+			<menu webc:else>
+				<li><a href="https://journal.nexspring.ca">articles</a></li>
+				<li><a href="#about">about</a></li>
+				<li><a href="#team">team</a></li>
+				<li><a href="#contact">contact</a></li>
+			</menu>
+		</nav-hamburger>
+	</nav>
+</header>
+
+<main @raw="content"></main>
+
+<footer>
+	<span class="copy">Copyright &copy; 2026 NexSpring Software Inc.</span>
+</footer>
+
+<template webc:nokeep webc:if="ghost">
+	{{ ghost_foot }}
+</template>

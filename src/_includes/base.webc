@@ -16,62 +16,186 @@
 		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
 		rel="stylesheet">
 
-	<link rel="stylesheet" href="/styles.css">
-	<link webc:if="ghost" rel="stylesheet" href="/ghost.css">
 	<style>
-		body>header {
-			box-shadow: var(--shadow) 0px 0px 16px;
-			font-family: var(--font-head);
-		}
+		@layer color {
+			:root {
+				--bg-color: hsl(0 0% 100%);
+				--color: hsl(220 20% 10%);
 
-		main,
-		article {
-			>header {
-				>:first-child {
-					margin-top: 4rem;
+				--primary: hsl(220 60% 15%);
+				--fg-primary: hsl(0 0% 98%);
+
+				--secondary: hsl(220 15% 92%);
+				--fg-secondary: hsl(220 20% 10%);
+
+				--muted: hsl(220 10% 94%);
+				--fg-muted: hsl(220 10% 45%);
+
+				--accent: hsl(215 90% 50%);
+				--fg-accent: hsl(0 0% 100%);
+
+				--grid-line: hsl(220 15% 90%);
+				--shadow: hsl(220 15% 90%);
+			}
+
+			@media only screen and (prefers-color-scheme: dark) {
+				:root {
+					--bg-color: hsl(220 40% 20%);
+					--color: hsl(0 0% 95%);
+
+					--primary: hsl(0 0% 95%);
+					--fg-primary: hsl(220 20% 8%);
+
+					--secondary: hsl(220 15% 18%);
+					--fg-secondary: hsl(0 0% 95%);
+
+					--muted: hsl(220 15% 18%);
+					--fg-muted: hsl(220 10% 60%);
+
+					--accent: color-mix(in hsl, hsl(215 90% 50%), gray);
+					--fg-accent: hsl(0 0% 100%);
+
+					--destructive: hsl(0 62% 30%);
+					--fg-destructive: hsl(0 75% 50%);
+
+					--grid-line: hsl(220 40% 30%);
+					--shadow: hsl(220 40% 15%);
+				}
+			}
+
+			@layer base {
+				:root {
+					--font-head: 'JetBrains Mono', monospaced;
+					--font-body: 'IBM Plex Sans', Georgia, serif;
+          --content-width: 60rem;
 				}
 
-				>:last-child {
-					margin-bottom: 4rem;
+				html {
+					scroll-behavior: smooth;
+					scroll-padding-top: calc(var(--header-height) + 3rem);
 				}
 
-				span {
+				body {
+					margin: 0;
+					padding: 0;
+
+					font-family: var(--font-body);
+
 					background-color: var(--bg-color);
+					color: var(--color);
 				}
 
-				box-shadow: var(--shadow) 0px 0px 16px;
-				background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
-				linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-				background-size: 3.333rem 3.333rem;
-				background-position: 50% 0;
-				padding: 1rem 0;
-				margin: 1rem 0;
-				margin-bottom: 6rem;
+				nav,
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6,
+				p,
+				ul,
+				ol,
+				figure,
+				card-grid,
+				figure {
+					max-width: var(--content-width);
+					margin-left: auto;
+					margin-right: auto;
+					margin-bottom: 1rem;
+					padding: 0 1rem;
+				}
+
+				h1,
+				h2 {
+					margin-top: 6rem;
+				}
+
+				h3,
+				h4 {
+					margin-top: 3rem;
+				}
+
+				h5,
+				h6,
+				p,
+				ul,
+				ol,
+				figure,
+				card-grid,
+				figure {
+					margin-top: 1rem;
+				}
+
+				ul,
+				ol {
+					padding: 0;
+				}
+
+				body>main {
+					padding-bottom: 50vh;
+					flex: 1 1 auto;
+				}
+
+				img {
+					max-width: 100%;
+					height: auto;
+					border-radius: 16px;
+					corner-shape: squircle;
+				}
+
+				figure img {
+					width: 100%;
+				}
+
+				header * {
+					font-family: var(--font-head);
+				}
+
+				p {
+					text-align: justify;
+				}
+
+				.copy {
+					font-size: small;
+					color: var(--fg-muted);
+				}
+
+				logo {
+					font-size: large;
+				}
+
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6 {
+					font-family: var(--font-head);
+				}
+
+				h1 {
+					font-size: 32pt;
+					text-transform: capitalize;
+				}
+
+				h2 {
+					font-size: x-large;
+				}
+
+				h3 {
+					font-size: large;
+				}
+
+				hr {
+					margin: 6rem 0;
+				}
+
+				a {
+					color: var(--color);
+				}
 			}
 		}
-
-		nav {
-			background-color: var(--bg-color);
-		}
-
-		.notransition * {
-			animation: none !important;
-			transition: none !important;
-		}
 	</style>
-
-	<!-- prevent transition during resize -->
-	<script type="module">
-		let resizeTimer;
-		window.addEventListener("resize", () => {
-			document.body.classList.add("notransition");
-			clearTimeout(resizeTimer);
-			resizeTimer = setTimeout(() => {
-				document.body.classList.remove("notransition");
-			}, 100);
-		});
-	</script>
-
 	<style webc:keep @raw="getBundle('css')"></style>
 	<script webc:keep @raw="getBundle('js')"></script>
 
@@ -82,35 +206,6 @@
 	</template>
 </head>
 
-<body :class="ghost ? '{{ body_class }}' : ''">
-	<header>
-		<nav>
-			<a href="/#top">
-				<logo @text="site"></logo>
-			</a>
-			<nav-hamburger>
-				<template webc:nokeep webc:if="ghost">
-					{{ navigation }}
-				</template>
-				<menu webc:else>
-					<li><a href="https://journal.nexspring.ca">articles</a></li>
-					<li><a href="#about">about</a></li>
-					<li><a href="#team">team</a></li>
-					<li><a href="#contact">contact</a></li>
-				</menu>
-			</nav-hamburger>
-		</nav>
-	</header>
-
-	<main @raw="content"></main>
-
-	<footer>
-		<span class="copy">Copyright &copy; 2026 NexSpring Software Inc.</span>
-	</footer>
-
-	<template webc:nokeep webc:if="ghost">
-		{{ ghost_foot }}
-	</template>
-</body>
+<body @raw="content"></body>
 
 </html>
