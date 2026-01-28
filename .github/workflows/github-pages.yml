@@ -36,7 +36,7 @@ jobs:
       - name: Install Dependencies
         run: deno install
       - name: Build Site
-        run: deno x @11ty/eleventy
+        run: deno run --allow-all @11ty/eleventy
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
